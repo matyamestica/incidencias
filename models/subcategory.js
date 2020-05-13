@@ -3,9 +3,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var SubcategorieSchema = Schema({
+var SubcategorySchema = Schema({
     name: String,
     description: String
 });
 
-module.exports = mongoose.model('Subcategorie', SubcategorieSchema);
+module.exports = mongoose.model('Subcategory', SubcategorySchema);
