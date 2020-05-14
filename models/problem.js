@@ -13,8 +13,8 @@ var ProblemSchema = Schema({
     file: String,
     category: {type: Schema.ObjectId, ref:'Categorie'},
     state: String,
-    date_create: Date,
-    date_fin: Date
+    date_create: String,
+    date_fin: String
 });
 
 module.exports = mongoose.model('Problem', ProblemSchema);

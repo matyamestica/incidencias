@@ -12,7 +12,7 @@ var UserSchema = Schema({
     image: String,
     year: Number,
     role: String,
-    date: Date
+    date: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
