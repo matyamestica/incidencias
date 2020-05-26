@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var SubjectSchema = Schema({
     name: String,
     code: String,
-    teacher: {type: Schema.ObjectId, ref:'User'}
+    teacher: String
 });
 
 module.exports = mongoose.model('Subject', SubjectSchema);

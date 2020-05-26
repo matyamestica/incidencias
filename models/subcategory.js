@@ -5,7 +5,9 @@ var Schema = mongoose.Schema;
 
 var SubcategorySchema = Schema({
     name: String,
-    description: String
+    description: String,
+    date: String,
+    file: String
 });
 
 module.exports = mongoose.model('Subcategory', SubcategorySchema);

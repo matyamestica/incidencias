@@ -10,4 +10,4 @@ var CategorySchema = Schema({
     file: String
 });
 
-module.exports = mongoose.model('Answer', CategorySchema);
+module.exports = mongoose.model('Category', CategorySchema);
