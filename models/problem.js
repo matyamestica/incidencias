@@ -12,6 +12,7 @@ var ProblemSchema = Schema({
     subject: {type: Schema.ObjectId, ref:'Subject'},
     file: String,
     category: {type: Schema.ObjectId, ref:'Category'},
+    subcategory: {type: Schema.ObjectId, ref:'Subcategory'},
     state: String,
     date_create: String,
     date_fin: String

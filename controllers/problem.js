@@ -26,6 +26,7 @@ function saveProblem(req, res){
     problem.file = 'null'; //MODIFICAR PARA PODER SUBIR ARCHIVO
     problem.subject = params.subject;
     problem.category = params.category;
+    problem.subcategory = params.subcategory;
     problem.state = params.state;
     problem.date_create = 'null';//MODIFICAR PARA OBTENER FECHA DE CREACIÓN
     problem.date_fin = 'null';//MODIFICAR PARA OBTENER FECHA DE CIERRE
