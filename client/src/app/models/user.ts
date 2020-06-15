@@ -6,7 +6,7 @@ export class User{
     public password: string,
     public rut: string,
     public image: string,
-    public year: number,
+    public year: string,
     public role: string,
     public date: string,
     public state: string

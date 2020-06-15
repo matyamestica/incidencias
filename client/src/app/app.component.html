@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<!DOCTYPE html>
+<html>
+  <div *ngIf="identity" class="navigation col-lg-1">
+    <h1>
+        {{title}}
+    </h1>
+  </div>
+
+  <div *ngIf="identity" class="central col-lg-11">
+      <p>Estas logueado en la aplicacion</p>
+  </div>
+
+  <body>
+    <div class="principal" *ngIf="!identity">
+
+      <td class="col-lg-6">
+          <h1 style="color: blue;">Identificate</h1>
+
+      </td>
+      <td class="col-lg-6">
+          <h1 style="color: blue;">Registrate</h1>
+      </td>
+
+    </div>
+  </body>
+</html>
+
+
