@@ -1,11 +1,11 @@
-.content{
+.content {
   margin-top: 200px;
   height: 500px;
   margin-left: 500px;
   margin-right: 500px;
   position: center;
   background-color: #253E85;
-  border: 3px solid rgb(0, 161, 223);
+  border: 10px solid rgb(0, 161, 223);
 }
 .center {
   margin: 0;
@@ -17,9 +17,5 @@
 }
 .text-center {
   margin: 50;
-}
-.carousel-inner img {
-    width: 100%;
-    height: 100%;
 }
 

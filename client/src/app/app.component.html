@@ -16,15 +16,7 @@
 </head>
 
 
-<div *ngIf="identity" class="navigation col-lg-1">
-    <h1>
-        {{title}}
-    </h1>
-</div>
 
-<div *ngIf="identity" class="central col-lg-11">
-    <p>Estas logueado en la aplicacion</p>
-</div>
 
 
 
@@ -32,100 +24,82 @@
 
 <body>
 
-  <div>
-
-    <div id="demo" class="carousel slide" data-ride="carousel">
-      <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-      </ul>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://images.wallpaperscraft.com/image/tiger_predator_big_cat_173655_1920x1080.jpg" alt="UCM1" width="100%" height="720px">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="/client/src/app/carrusel/ucm2.jpg" alt="UCM2" width="auto" height="500">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="/client/src/app/carrusel/ucm3.jpg" alt="UCM3" width="1100" height="500">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="content" *ngIf="!identity">
-          <div class="text-center">
-            <h1 style="color: blanchedalmond;">
-              {{title}}
+    <!--loggueado-->
+    <div *ngIf="identity">
+        <div class="navigation col-lg-1">
+            <h1>
+                {{title}}
             </h1>
-          </div>
-          <div class="center">
-              <td class="col-lg-6">
-                  <h1 style="color: white;">Identificate</h1>
-                      <form class="col-md-10">
-                          <p>
-                              <input type="text" class="form-control" placeholder="Correo Electronico" required/>
-                          </p>
-                          <p>
-                              <input type="password" class="form-control" placeholder="Contraseña" required/>
-                          </p>
-                      </form>
+        </div>
 
-              </td>
-              <td>
-
-                  <h3 style="color:white">o</h3>
-
-              </td>
-              <td class="col-lg-6">
-                  <h1 style="color: white;">Registrate</h1>
-                      <form class="col-md-10">
-                          <p>
-                              <input type="text" class="form-control" placeholder="Nombre" required/>
-                          </p>
-                          <p>
-                              <input type="text" class="form-control" placeholder="Apellido" required/>
-                          </p>
-                          <p>
-                              <input type="text" class="form-control" placeholder="RUT" required/>
-                          </p>
-                          <p>
-                              <input type="text" class="form-control" placeholder="Correo" required/>
-                          </p>
-                          <p>
-                              <input type="password" class="form-control" placeholder="Contraseña" required/>
-                          </p>
-                      </form>
-              </td>
-          </div>
-
-
-      </div>
-
-
-
-
-
-
-
-
+        <div class="central col-lg-11">
+            <p>Estas logueado en la aplicacion</p>
+        </div>
     </div>
 
 
-  </div>
-
-
-
-  </div>
 
 
 
 
+    <!--deslogueado-->
+    <div *ngIf="!identity">
+        <div class="content" >
+            <div class="text-center">
+                <h1 style="color: blanchedalmond;">
+                    {{title}}
+                </h1>
+            </div>
+            <div class="center">
+                <td class="col-lg-6">
+                    <h1 style="color: white;">Identificate</h1>
+                    <form #loginForm="ngForm" class="col-md-10">
+                        <p>
+                            <input type="text" #email="ngModel" name="email" [(ngModel)]="user.email" class="form-control" placeholder="Correo Electronico" required/>
+                            <!--
+                            <span *ngIf="!email.valid && email.touched">
+                              El campo email es obligatorio
+                            </span>
+                            -->
 
+                        </p>
+                        <p>
+                            <input type="password" class="form-control" placeholder="Contraseña" required/>
+                        </p>
+                        <button type="button" class="btn btn-primary btn-lg">Entrar</button>
+                    </form>
+                    <br>
+                    <h5 style="color:white">si eres nuevo, registrate</h5>
 
+                </td>
+                <td>
+
+                </td>
+                <td class="col-lg-6">
+                    <h1 style="color: white;">Registrate</h1>
+                    <form class="col-md-10">
+                        <p>
+                            <input type="text" class="form-control" placeholder="Nombre" required/>
+                        </p>
+                        <p>
+                            <input type="text" class="form-control" placeholder="Apellido" required/>
+                        </p>
+                        <p>
+                            <input type="text" class="form-control" placeholder="RUT" required/>
+                        </p>
+                        <p>
+                            <input type="text" class="form-control" placeholder="Correo" required/>
+                        </p>
+                        <p>
+                            <input type="password" class="form-control" placeholder="Contraseña" required/>
+                        </p>
+                        <button type="button" class="btn btn-success btn-lg">Registrarse</button>
+                    </form>
+                </td>
+            </div>
+
+        </div>
+    </div>
 
 
 
@@ -135,3 +109,52 @@
 </html>
 
 
+
+<!-- carrusel
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+<div>
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.wallpaperscraft.com/image/tiger_predator_big_cat_173655_1920x1080.jpg" alt="UCM1" width="100%" height="720px">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/client/src/app/carrusel/ucm2.jpg" alt="UCM2" width="auto" height="500">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/client/src/app/carrusel/ucm3.jpg" alt="UCM3" width="1100" height="500">
+        <div class="carousel-caption">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+</div>
+-->
