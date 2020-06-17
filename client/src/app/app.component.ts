@@ -47,7 +47,7 @@ export class AppComponent  implements OnInit{
               let token = response.token;
               this.token = token;
 
-              if(!this.token.length <= 0){
+              if(this.token.length <= 0){
                 alert("El token no se ha generado");
               }else{
                   //crear elemento en el localstorage para tener token disponible
