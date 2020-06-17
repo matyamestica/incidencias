@@ -44,6 +44,12 @@
 
     <!--deslogueado-->
     <div *ngIf="!identity">
+        <div *ngIf="errorMessage">
+            <div class="alert alert-warning alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>ERROR</strong>  {{errorMessage}}
+            </div>
+        </div>
         <div class="content" >
             <div class="text-center">
                 <h1 style="color: blanchedalmond;">
