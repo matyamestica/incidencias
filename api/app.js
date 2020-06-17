@@ -21,6 +21,9 @@ app.use((req, res, next) => {
 });
 
 
-//tutas base
+//rutas base
+app.use('/api', user_routes);
+
+
 
 module.exports = app;
