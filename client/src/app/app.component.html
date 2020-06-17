@@ -4,6 +4,7 @@
   <title>Font Awesome Icons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,9 +52,11 @@
             <div class="alert alert-warning alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>ERROR</strong>  {{errorMessage}}
-                <i class="far fa-frown"></i>
+
             </div>
+
         </div>
+        <i class="far fa-frown"></i>
         <div class="content" >
             <div class="text-center">
                 <h1 style="color: blanchedalmond;">
@@ -61,7 +64,7 @@
                 </h1>
             </div>
             <div class="center">
-                <td class="col-lg-6">
+                <td>
                     <h1 style="color: white;">Identificate</h1>
                     <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-10">
                         <p>
@@ -85,7 +88,7 @@
                 <td>
 
                 </td>
-                <td class="col-lg-6">
+                <td>
                     <h1 style="color: white;">Registrate</h1>
                     <form class="col-md-10">
                         <p>
