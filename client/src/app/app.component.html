@@ -117,10 +117,19 @@
                             <input type="password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control" placeholder="Contraseña" required/>
                         </p>
                         <p>
-                            <input type="date" #name="ngModel" name="year" [(ngModel)]="user_register.year" class="form-control" placeholder="Año ingreso"/>
+                            <input type="number" min="2005" max="2020" #name="ngModel" name="year" [(ngModel)]="user_register.year" class="form-control" placeholder="Año ingreso"/>
                         </p>
-                        <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
-                        <input type="reset">
+                        <div>
+                          <td>
+                            <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
+                          </td>
+                          <td>
+                            <input type="reset" class="btn btn-success btn-lg">
+                          </td>
+
+
+                        </div>
+
                     </form>
                 </td>
             </div>
@@ -128,7 +137,7 @@
         </div>
     </div>
 
-    
+
 
 
 </body>
