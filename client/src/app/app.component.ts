@@ -11,6 +11,7 @@ import { User } from './models/user';
 export class AppComponent  implements OnInit{
   public title = 'INCIDENCIAS EICI';
   public user: User;
+  public user_register: User;
   public identity;
   public token;
   public errorMessage;
@@ -19,10 +20,15 @@ export class AppComponent  implements OnInit{
     private _userService: UserService
   ){
     this.user = new User('','','','','','','','ROLE_USER','','');
+    this.user_register = new User('','','','','','','','ROLE_USER','','');
   }
 
   ngOnInit(){
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
 
+    console.log(this.identity);
+    console.log(this.token)
   }
 
 
@@ -39,7 +45,7 @@ export class AppComponent  implements OnInit{
           alert("El usuario no se ha registrado correctamente");
         }else{
           //crear elemento en el local storage para tener al usuario en sesion
-
+          localStorage.setItem('identity', JSON.stringify(identity));
           //conseguir tokken para enviarselo a cada peticion http
 
           this._userService.signup(this.user, 'true').subscribe(
@@ -51,6 +57,7 @@ export class AppComponent  implements OnInit{
                 alert("El token no se ha generado");
               }else{
                   //crear elemento en el localstorage para tener token disponible
+                  localStorage.setItem('token', token);
                   console.log(token);
                   console.log(identity);
               }
@@ -82,4 +89,17 @@ export class AppComponent  implements OnInit{
       }
     );
   }
+
+  logout(){
+    localStorage.removeItem('identity');
+    localStorage.removeItem('token');
+    localStorage.clear();
+    this.identity = null;
+    this.token = null;
+  }
+
+  onSubmitRegister(){
+    console.log(this.user_register);
+  }
+
 }
