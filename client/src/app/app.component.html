@@ -99,9 +99,15 @@
                     <form #registerForm="ngForm" (ngSubmit)="onSubmitRegister()" class="col-md-10">
                         <p>
                             <input type="text" #name="ngModel" name="name" [(ngModel)]="user_register.name" class="form-control" placeholder="Nombre" required/>
+                            <span *ngIf="!name.valid && name.touched" style="color:red">
+                                El campo Nombre es obligatorio
+                              </span>
                         </p>
                         <p>
                             <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" class="form-control" placeholder="Apellido" required/>
+                            <span *ngIf="!surname.valid && surname.touched" style="color:red">
+                                El campo Apellido es obligatorio
+                              </span>
                         </p>
                         <p>
                             <input type="text" #rut="ngModel" name="rut" [(ngModel)]="user_register.rut" class="form-control" placeholder="RUT" required/>
@@ -112,7 +118,11 @@
                         <p>
                             <input type="password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control" placeholder="Contraseña" required/>
                         </p>
-                        <button type="button" class="btn btn-success btn-lg">Registrarse</button>
+                        <p>
+                            <input type="date" #name="ngModel" name="year" [(ngModel)]="user_register.year" class="form-control" placeholder="Año ingreso"/>
+                        </p>
+                        <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
+                        <input type="reset">
                     </form>
                 </td>
             </div>
