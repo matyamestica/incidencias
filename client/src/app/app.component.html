@@ -34,14 +34,24 @@
         </div>
         <div>
             <!--ubicacion actual-->
-
-            <h1 style="color: #00A0DF; font-size:90px;"><user-edit></user-edit></h1>
+            <router-outlet>{{titulo}}</router-outlet>
+            <h1 style="color: #00A0DF; font-size:90px;"></h1>
         </div>
         <div>
           <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
           <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
           <a href="#"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div> 
         </div>
 
 
@@ -63,7 +73,7 @@
         <div class="central col-lg-11">
             <p>Estas logueado en la aplicacion</p>
         </div>
-        <user-edit></user-edit>
+        <router-outlet></router-outlet>
     </div>
 
 
