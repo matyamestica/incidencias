@@ -9,6 +9,7 @@ export class User{
     public year: string,
     public role: string,
     public date: string,
-    public state: string
+    public state: string,
+    public email: string
   ){}
 }

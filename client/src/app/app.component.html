@@ -11,16 +11,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
+<style>
 
-  </style>
+</style>
 
 </head>
-
-
-
-
 
 
 
@@ -29,13 +27,34 @@
 
     <!--loggueado-->
     <div *ngIf="identity">
+      <div class="navbar" style="background-color: #253E85;">
+        <div style="color: #00A0DF; ">
+
+          <strong><i class="far fa-file-alt"></i> {{title}} </strong>
+        </div>
+        <div>
+            <!--ubicacion actual-->
+
+            <h1 style="color: #00A0DF; font-size:90px;"><user-edit></user-edit></h1>
+        </div>
+        <div>
+          <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+          <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+          <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+          <a href="#"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
+        </div>
+
+
+
+      </div>
         <div class="navigation col-lg-1">
-            <h1>
-                {{title}}
-            </h1>
+
             <span>
-                {{identity.name}} {{identity.surname}}
+                {{identity.name}}
+                <br>
+                {{identity.surname}}
             </span>
+            <br>
             <span class="btn btn-warning" (click)="logout()">
                 Cerrar Sesión
             </span>
@@ -44,6 +63,7 @@
         <div class="central col-lg-11">
             <p>Estas logueado en la aplicacion</p>
         </div>
+        <user-edit></user-edit>
     </div>
 
 
@@ -57,10 +77,18 @@
             <div class="alert alert-warning alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>ERROR</strong>  {{errorMessage}}
-
             </div>
-
         </div>
+        <div *ngIf="alertRegister">
+          <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Fantastico!</strong> {{alertRegister}}
+          </div>
+      </div>
+
+
+
+
         <div class="content" >
             <div class="text-center">
                 <h1 style="color: blanchedalmond;">
@@ -93,19 +121,28 @@
 
                 </td>
                 <td>
+
+
+                  <div *ngIf="errorMessage">
+                    <div class="alert alert-warning alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>ERROR</strong>  {{errorMessage}}
+
+                    </div>
+
+                </div>
+
+
+
+
                     <h1 style="color: white;">Registrate</h1>
+
                     <form #registerForm="ngForm" (ngSubmit)="onSubmitRegister()" class="col-md-10">
                         <p>
                             <input type="text" #name="ngModel" name="name" [(ngModel)]="user_register.name" class="form-control" placeholder="Nombre" required/>
-                            <span *ngIf="!name.valid && name.touched" style="color:red">
-                                El campo Nombre es obligatorio
-                              </span>
                         </p>
                         <p>
                             <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" class="form-control" placeholder="Apellido" required/>
-                            <span *ngIf="!surname.valid && surname.touched" style="color:red">
-                                El campo Apellido es obligatorio
-                              </span>
                         </p>
                         <p>
                             <input type="text" #rut="ngModel" name="rut" [(ngModel)]="user_register.rut" class="form-control" placeholder="RUT" required/>
@@ -120,14 +157,12 @@
                             <input type="number" min="2005" max="2020" #name="ngModel" name="year" [(ngModel)]="user_register.year" class="form-control" placeholder="Año ingreso"/>
                         </p>
                         <div>
-                          <td>
-                            <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
-                          </td>
-                          <td>
-                            <input type="reset" class="btn btn-dark btn-lg">
-                          </td>
-
-
+                            <td>
+                                <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
+                            </td>
+                            <td>
+                                <input type="reset" class="btn btn-dark btn-lg">
+                            </td>
                         </div>
 
                     </form>
