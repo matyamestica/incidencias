@@ -12,7 +12,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 
@@ -38,36 +41,31 @@
             <h1 style="color: #00A0DF; font-size:90px;"></h1>
         </div>
         <div>
+
           <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
           <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
           <a href="#"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
-          <div class="dropdown">
-            <button class="dropbtn">Dropdown
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div> 
+          <a class="btn btn-warning" (click)="logout()">
+            Cerrar Sesión
+          </a>
+
         </div>
 
 
 
       </div>
+        
         <div class="navigation col-lg-1">
 
             <span>
                 {{identity.name}}
                 <br>
                 {{identity.surname}}
+
             </span>
             <br>
-            <span class="btn btn-warning" (click)="logout()">
-                Cerrar Sesión
-            </span>
+
         </div>
 
         <div class="central col-lg-11">
@@ -131,18 +129,6 @@
 
                 </td>
                 <td>
-
-
-                  <div *ngIf="errorMessage">
-                    <div class="alert alert-warning alert-dismissible">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>ERROR</strong>  {{errorMessage}}
-
-                    </div>
-
-                </div>
-
-
 
 
                     <h1 style="color: white;">Registrate</h1>

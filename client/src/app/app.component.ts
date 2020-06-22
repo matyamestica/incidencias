@@ -17,6 +17,7 @@ export class AppComponent  implements OnInit{
   public errorMessage;
   public alertRegister;
 
+
   constructor(
     private _userService: UserService
   ){
