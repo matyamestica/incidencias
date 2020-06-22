@@ -16,6 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
 
@@ -55,7 +57,7 @@
 
 
       </div>
-        
+
         <div class="navigation col-lg-1">
 
             <span>
@@ -149,9 +151,32 @@
                         <p>
                             <input type="password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control" placeholder="Contraseña" required/>
                         </p>
-                        <p>
-                            <input type="number" min="2005" max="2020" #name="ngModel" name="year" [(ngModel)]="user_register.year" class="form-control" placeholder="Año ingreso"/>
-                        </p>
+                        <div class="w3-row w3-section">
+                              <div class="w3-rest">
+                                <form class="w3-container w3-card-5" action="/action_page.php">
+                                  <select class="w3-select w3-border" name="year" [(ngModel)]="user_register.year">
+                                    <option value="" disabled selected>Año Ingreso</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                  </select>
+                                </form>
+
+                              </div>
+                          </div>
                         <div>
                             <td>
                                 <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
