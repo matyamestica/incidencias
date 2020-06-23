@@ -32,6 +32,18 @@
 
 <body>
 
+
+
+
+
+
+
+
+
+
+
+
+
     <!--loggueado-->
     <div *ngIf="identity">
       <div class="navbar" style="background-color: #253E85;">
@@ -39,26 +51,32 @@
 
           <strong><i class="far fa-file-alt"></i> {{title}} </strong>
         </div>
-        <div>
-            <!--ubicacion actual-->
-            <router-outlet>{{titulo}}</router-outlet>
-            <h1 style="color: #00A0DF; font-size:90px;"></h1>
-        </div>
+      
         <div>
 
           <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
           <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
           <a href="#"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
-          <a class="btn btn-warning" (click)="logout()">
-            Cerrar Sesión
-          </a>
-          <a class="w3-tag w3-spin w3-large" style="color: red; background-color: #253E85;">
-            <i class="fa fa-fw fa-user"></i>
-          </a>
-          <div class="w3-container">
+          <a class="w3-container">
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-yellow">CERRAR SESION</button>
+            <div id="id01" class="w3-modal">
+              <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-teal">
+                  <span onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-display-topright">&times;</span>
+                  <h2>¿Estas seguro de querer cerrar sesion?</h2>
+                </header>
+                <div class="w3-container" style="background-color: #00A0DF;">
+                  <p><button class="w3-button w3-block w3-red w3-teal" (click)="logout()">Cerrar Sesion</button></p>
+                </div>
+                <footer class="w3-container w3-teal">
 
-          </div>
+                </footer>
+              </div>
+            </div>
+          </a>
+
 
         </div>
 
