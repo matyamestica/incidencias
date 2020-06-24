@@ -47,7 +47,7 @@
     <!--loggueado-->
     <div *ngIf="identity">
       <div class="navbar" style="background-color: #253E85;">
-        <div style="color: #00A0DF; ">
+        <div style="color: #00A0DF;">
 
           <strong><i class="far fa-file-alt"></i> {{title}} </strong>
         </div>
@@ -86,24 +86,8 @@
 
 
       </div>
-
-        <div class="navigation col-lg-1">
-
-            <span>
-                {{identity.name}}
-                <br>
-                {{identity.surname}}
-
-            </span>
-            <br>
-
-        </div>
-
-        <div class="central col-lg-11">
-            <p>Estas logueado en la aplicacion</p>
-        </div>
-        <router-outlet></router-outlet>
-    </div>
+           <router-outlet></router-outlet>
+      </div>
 
 
 
