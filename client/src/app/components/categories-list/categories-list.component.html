@@ -1,7 +1,7 @@
 <div class="head page" *ngIf="identity">
   <h1>{{titulo}}</h1>
 
-<a class="btn btn-success">
+<a *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
     Añadir Categoría
 </a>
 </div>
