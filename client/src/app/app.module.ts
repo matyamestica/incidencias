@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserEditComponent
+    UserEditComponent,
+    CategoriesListComponent
   ],
   imports: [
     BrowserModule,
