@@ -1,7 +1,8 @@
+
 <div class="head page" *ngIf="identity">
   <h1>{{titulo}}</h1>
 
-<a *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
+<a [routerLink]="['/new-category']" [routerLinkActive]="['actived']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
     Añadir Categoría
 </a>
 <div class="w3-container">

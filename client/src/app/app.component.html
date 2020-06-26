@@ -62,7 +62,7 @@
           <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
           <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-          <a href="#" id="identity_name"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
+          <a [routerLink]="['/mis-datos']" [routerLinkActive]="['actived']" id="identity_name"><i class="fa fa-fw fa-user"></i>{{identity.name}}</a>
           <a class="w3-container" >
             <button style="height: 30px;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue" style="height: 30px;padding-top: 4px;">CERRAR SESION</button>
             <div id="id01" class="w3-modal" style="color: #00A0DF;">
@@ -88,7 +88,7 @@
 
 
       </div>
-           <router-outlet></router-outlet>
+           <router-outlet></router-outlet>    
       </div>
 
 

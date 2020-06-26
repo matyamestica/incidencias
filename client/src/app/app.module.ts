@@ -7,13 +7,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
+import { NewCategoryComponent } from './components/new-category/new-category.component';
+import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserEditComponent,
-    CategoriesListComponent
+    CategoriesListComponent,
+    NewCategoryComponent,
+    NewSubcategoryComponent
   ],
   imports: [
     BrowserModule,
