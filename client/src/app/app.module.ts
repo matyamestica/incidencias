@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { NewCategoryComponent } from './components/new-category/new-category.component';
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
+import { NewProblemComponent } from './components/new-problem/new-problem.component';
+import { NewAnswerComponent } from './components/new-answer/new-answer.component';
+import { NewSubjectComponent } from './components/new-subject/new-subject.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { NewSubcategoryComponent } from './components/new-subcategory/new-subcat
     UserEditComponent,
     CategoriesListComponent,
     NewCategoryComponent,
-    NewSubcategoryComponent
+    NewSubcategoryComponent,
+    NewProblemComponent,
+    NewAnswerComponent,
+    NewSubjectComponent
   ],
   imports: [
     BrowserModule,
