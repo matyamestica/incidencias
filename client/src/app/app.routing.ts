@@ -7,12 +7,16 @@ import { UserEditComponent } from './components/user-edit.component';
 
 // import category
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
-import { NewCategoryComponent } from './components/new-category/new-category.component';  
+import { NewCategoryComponent } from './components/new-category/new-category.component';
+
+//import problem
+import { NewProblemComponent } from './components/new-problem/new-problem.component'; 
 
 
 const appRoutes: Routes = [
     {path: '', component: CategoriesListComponent},
     {path: 'new-category', component: NewCategoryComponent},
+    {path: 'new-problem', component: NewProblemComponent},
     {path: 'categories/:page', component: CategoriesListComponent},
     {path: 'mis-datos', component: UserEditComponent},
     {path: '**', component: CategoriesListComponent}
