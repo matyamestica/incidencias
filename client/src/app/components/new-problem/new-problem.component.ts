@@ -5,12 +5,13 @@ import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
 import { Problem } from '../../models/problem';
 import { User } from '../../models/user';
+import { ProblemService } from 'app/services/problem.service';
 
 
 @Component({
   selector: 'app-new-problem',
   templateUrl: './new-problem.component.html',
-  providers: [UserService],
+  providers: [UserService, ProblemService],
   styleUrls: ['./new-problem.component.css']
 })
 export class NewProblemComponent implements OnInit {
@@ -24,7 +25,8 @@ export class NewProblemComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private _problemService: ProblemService
   ) {
     this.titulo = 'Nueva Incidencia';
         this.identity = this._userService.getIdentity();
@@ -35,6 +37,30 @@ export class NewProblemComponent implements OnInit {
 
   ngOnInit() {
     console.log('new-problem.component.ts cargado');
+  }
+
+  onSumbmit(){
+    console.log(this.problem);
+    this._problemService.addProblem(this.token, this.problem).subscribe(
+        response => {
+              if(!response.problem){
+                this.alertMessage('Error en el servidor');
+              }else{
+                this.alertMessage('El problema se ha creado correctamente');
+                this.problem = response.problem;
+              }
+
+        },
+        error => {
+          var errorMessage = <any>error;
+          if(errorMessage !=null){
+            var body = JSON.parse(error._body);
+            this.alertMessage = body.message;
+    
+            console.log(error);
+          }    
+        }
+    );
   }
 
 }
