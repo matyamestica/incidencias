@@ -9,6 +9,9 @@ import { UserEditComponent } from './components/user-edit.component';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { NewCategoryComponent } from './components/new-category/new-category.component';
 
+//import subcategory
+import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
+
 //import problem
 import { NewProblemComponent } from './components/new-problem/new-problem.component'; 
 
@@ -16,6 +19,7 @@ import { NewProblemComponent } from './components/new-problem/new-problem.compon
 const appRoutes: Routes = [
     {path: '', component: CategoriesListComponent},
     {path: 'new-category', component: NewCategoryComponent},
+    {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-problem', component: NewProblemComponent},
     {path: 'categories/:page', component: CategoriesListComponent},
     {path: 'mis-datos', component: UserEditComponent},
