@@ -7,7 +7,9 @@ import { Problem } from 'app/models/problem';
 
 @Injectable()
 export class ProblemService {
-    public url: string;
+  public url: string;
+  public identity;
+  public token;
 
   constructor(private _http: Http) { 
       this.url = GLOBAL.url;
