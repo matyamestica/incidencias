@@ -1,7 +1,11 @@
 <p>
   new-subcategory works!
 </p>
-
+<div *ngIf="alertMessage">
+  <div class="alert alert-info">
+    {{alertMessage}}
+  </div>
+</div>
 
 
 <form #NewSubcategoryForm="ngForm" (ngSubmit)="onSubmit()" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
@@ -39,16 +43,16 @@
       </div>
   </div>
   <div class="w3-container" >
-    <button type="submit" onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">ACEPTAR</button>
-    <div id="id03" class="w3-modal" style="color: #00A0DF;">
+    <button type="submit" onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">ACEPTAR</button>
+    <div id="id04" class="w3-modal" style="color: #00A0DF;">
       <div class="w3-modal-content w3-animate-top w3-card-4">
         <header class="w3-container w3-blue">
-          <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
           <h2>{{alertMessage}}</h2>
         </header>
 
         <div class="w3-container" style="background-color: white">
-          <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">ACEPTAR</button>
+          <button onclick="document.getElementById('id04').style.display='none'" type="button" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">ACEPTAR</button>
         </div>
 
       </div>

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { NewCategoryComponent } from './components/new-category/new-category.component';
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
+import { NewSubjectComponent } from './components/new-subject/new-subject.component';
 
 
 
@@ -18,7 +19,8 @@ import { NewSubcategoryComponent } from './components/new-subcategory/new-subcat
     UserEditComponent,
     CategoriesListComponent,
     NewCategoryComponent,
-    NewSubcategoryComponent
+    NewSubcategoryComponent,
+    NewSubjectComponent
   ],
   imports: [
     BrowserModule,
