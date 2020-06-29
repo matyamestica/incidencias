@@ -24,7 +24,7 @@ export class SubcategoryService{
           'Authorization':token
       });
 
-      return this._http.post(this.url+'subcategory', params ,{headers: headers})
+      return this._http.post(this.url+'subcategory',params, {headers: headers})
                         .map(res => res.json());
   }
 }
