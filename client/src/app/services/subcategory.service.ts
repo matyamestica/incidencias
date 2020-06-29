@@ -10,6 +10,8 @@ import { Subcategory } from './../models/subcategory';
 @Injectable()
 export class SubcategoryService{
   public url: string;
+  public identity;
+  public token;
 
   constructor(private _http: Http){
     this.url = GLOBAL.url;
@@ -22,7 +24,7 @@ export class SubcategoryService{
           'Authorization':token
       });
 
-      return this._http.post(this.url+'subcategory', params ,{headers: headers})
+      return this._http.post(this.url+'subcategory',params, {headers: headers})
                         .map(res => res.json());
   }
 }  
