@@ -2,14 +2,16 @@
   new-subcategory works!
 </p>
 
-<form #NewSubategoryForm="ngForm" (ngSubmit)="onSubmit()" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+
+
+<form #NewSubcategoryForm="ngForm" (ngSubmit)="onSubmit()" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
   <h2 class="w3-center">{{titulo}}</h2>
 
   <div class="w3-row w3-section">
     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
     <div class="w3-col" style="width:150px"><h3>Nombre:</h3></div>
       <div class="w3-rest">
-        <input class="w3-input w3-border" type="text" #name="ngModel" name="name" [(ngModel)]="category.name" required>
+        <input class="w3-input w3-border" type="text" #name="ngModel" name="name" [(ngModel)]="subcategory.name" required>
       </div>
   </div>
 
@@ -17,7 +19,7 @@
     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
     <div class="w3-col" style="width:150px"><h3>Descripción:</h3></div>
       <div class="w3-rest">
-        <input class="w3-input w3-border" type="text" #name="ngModel" name="description" [(ngModel)]="category.description">
+        <input class="w3-input w3-border" type="text" #name="ngModel" name="description" [(ngModel)]="subcategory.description">
       </div>
   </div>
 
@@ -25,7 +27,7 @@
     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
     <div class="w3-col" style="width:150px"><h3>Categoria:</h3></div>
       <div class="w3-rest">
-        <input class="w3-input w3-border" type="date" #name="ngModel" name="date" [(ngModel)]="subcategory.category">
+        <input class="w3-input w3-border" type="text" #name="ngModel" name="date" [(ngModel)]="subcategory.category">
       </div>
   </div>
 
@@ -42,7 +44,7 @@
       <div class="w3-modal-content w3-animate-top w3-card-4">
         <header class="w3-container w3-blue">
           <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-          <h2>{{alertNewCategory}}</h2>
+          <h2>{{alertMessage}}</h2>
         </header>
 
         <div class="w3-container" style="background-color: white">

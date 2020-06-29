@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
+import { SubcategoryService } from '../../services/subcategory.service';
 import { Subcategory } from '../../models/subcategory';
 import { User } from 'app/models/user';
-import { SubcategoryService } from 'app/services/subcategory.service';
 
 @Component({
   selector: 'app-new-subcategory',
@@ -42,25 +42,23 @@ export class NewSubcategoryComponent implements OnInit {
     console.log(this.subcategory);
     this._subcategoryService.addSubcategory(this.token, this.subcategory).subscribe(
       response => {
-          if(!response.subcategory){
-            this.alertMessage = 'Error en el servidor';
-          }else{
-            this.alertMessage = 'La subcategoría se ha creado exitosamente!';
-            this.subcategory = response.subcategory;
-            //this._router.navigate(['/category-edit'], response.category._id);
-          }
 
+        if(!response.subcategory){
+          this.alertMessage = 'Error en el servidor';
+        }else{
+          this.alertMessage = 'La subcategoría se ha creado correctamente';
+          this.subcategory = response.subcategory;
+        }
       },
       error => {
           var errorMessage = <any>error;
-      if(errorMessage !=null){
-        var body = JSON.parse(error._body);
-        this.alertMessage = body.message;
 
-        console.log(error);
-      }    
+          if(errorMessage != null){
+            var body = JSON.parse(error._body);
+            this.alertMessage = body.message;
+          }
       }
-    )
-  }
+    );
+      }
 
 }
