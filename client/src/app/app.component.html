@@ -116,6 +116,41 @@
             </div>
           </div>
         </div>
+        br
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <button [routerLink]="['/new-subject']" [routerLinkActive]="['actived']" *ngIf="identity.role == 'ROLE_ADMIN'" class="button">Añadir nuevo ramo</button>
+              <p></p>
+              <p>Opcion para añadir categoria</p>
+              <p>Some text</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <button [routerLink]="['/mis-datos']" [routerLinkActive]="['actived']" id="identity_name" class="button" style="background-color: chocolate; color: black;" disabled>Actualizar Datos</button>
+              <p></p>
+              <p>Boton para actualizar los datos</p>
+              <p>de mi usuario</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <button  onclick="document.getElementById('id01').style.display='block'" class="button" style="background-color: salmon; color: blueviolet;" disabled>Cerrar sesion</button>
+              <p></p>
+              <p>Some text</p>
+              <p>Some text</p>
+
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <button [routerLink]="['/new-subject']" [routerLinkActive]="['actived']"  class="button" disabled>Nueva Incidencia</button>
+              <p></p>
+              <p>Some text</p>
+            </div>
+          </div>
+        </div>
         <div>
           <router-outlet></router-outlet>
       </div>
