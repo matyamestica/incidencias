@@ -78,4 +78,22 @@ export class SubcategoriesListComponent implements OnInit {
       )
     });
   }
+  deleteSubcategory(id){
+    this._subcategoryService.deleteSubcategory(this.token, id).subscribe(
+      response => {
+        if(!response.subcategories){
+          //alert('Error en el servidor');
+        }
+          this.getSubcategories();
+        },
+        error => {
+          var errorMessage = <any>error;
+
+          if(errorMessage != null){
+            var body = JSON.parse(error._body);
+            //this.alertMessage = body.message;
+          }
+        }
+    );
+  } 
 }  

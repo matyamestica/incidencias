@@ -31,7 +31,7 @@ export class NewSubcategoryComponent implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
-    this.subcategory = new Subcategory('','','');
+    this.subcategory = new Subcategory('','','','');
    }
 
   ngOnInit() {
@@ -61,6 +61,6 @@ export class NewSubcategoryComponent implements OnInit {
           }
       }
     );
-      }
+  }
 
 }
