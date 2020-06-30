@@ -11,6 +11,7 @@ import { NewCategoryComponent } from './components/new-category/new-category.com
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
 import { HomeComponent } from './components/home/home.component';
+import { SubjectListComponent } from './components/subject-list/subject-list.component';
 
 
 
@@ -22,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     NewCategoryComponent,
     NewSubcategoryComponent,
     NewSubjectComponent,
-    HomeComponent
+    HomeComponent,
+    SubjectListComponent
   ],
   imports: [
     BrowserModule,

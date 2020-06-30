@@ -1,0 +1,16 @@
+
+<div class="head page" *ngIf="identity">
+  <h1>{{titulo}}</h1>
+
+<a [routerLink]="['/new-subject']" [routerLinkActive]="['actived']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
+    Añadir Ramo
+</a>
+<div class="w3-container">
+<div class="clearfix"></div>
+  <ul class="subject-list" *ngIf="identity">
+    <li *ngFor="let subject of subjects" clas="col-lg-3 subject-item">
+      {{subject.name}}
+    </li>
+  </ul>
+
+</div>

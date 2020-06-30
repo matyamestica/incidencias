@@ -36,4 +36,14 @@ export class CategoryService{
     return this._http.post(this.url+'category',params, {headers: headers})
                      .map(res => res.json());
   }
+  deleteCategory(token, id: string){
+    let headers = new Headers({
+      'Content-type':'application/json',
+      'Authorization':token
+    });
+    
+    let options = new RequestOptions({ headers: headers});
+    return this._http.get(this.url+'category/'+id, options)
+                      .map(res => res.json());
+  }
 }
