@@ -17,13 +17,15 @@
       <tr class="w3-light-grey">
         <th>Nombre Categoria</th>
         <th>Descripción</th>
+        <th>Fecha</th>
         <th class="w3-right-align">Editar / Eliminar</th>
       </tr>
     </thead>
     <tr *ngFor="let category of categories" class="w3-hover-blue">
       <td>{{category.name}}</td>
       <td>{{category.description}}</td>
-      <td class="w3-right-align"><button class="btn" style="background-color: yellow;"><i class="fa fa-bars"></i></button><button class="btn"><i class="fa fa-trash"></i></button></td>
+      <td>{{category.date}}</td>
+      <td class="w3-right-align"><button class="btn" style="background-color: yellow;"><i class="fa fa-bars"></i></button><button (click)="deleteCategory(category._id)" class="btn"><i class="fa fa-trash"></i></button></td>
     </tr>
   </table>
 </div>
