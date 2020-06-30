@@ -83,7 +83,7 @@ export class CategoriesListComponent implements OnInit {
     this._categoryService.deleteCategory(this.token, id).subscribe(
       response => {
         if(!response.category){
-          alert('Error en el servidor');
+          alert('Categoría eliminada');
         }
           this.getCategories();
         },
