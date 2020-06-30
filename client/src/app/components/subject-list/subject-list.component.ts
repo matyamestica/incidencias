@@ -1,8 +1,8 @@
+import { SubjectService } from './../../services/subject.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from '../../services/global';
 import { UserService } from 'app/services/user.service';
-import { SubjectService } from 'app/services/subject.service';
 import { Subject } from '../../models/subject';
 
 @Component({
@@ -76,4 +76,23 @@ export class SubjectListComponent implements OnInit {
       )
     });
   }
-}  
+
+  deleteSubject(id){
+    this._subjectService.deleteSubject(this.token, id).subscribe(
+      response => {
+        if(!response.subjects){
+          //alert('Error en el servidor');
+        }
+          this.getSubjects();
+        },
+        error => {
+          var errorMessage = <any>error;
+
+          if(errorMessage != null){
+            var body = JSON.parse(error._body);
+            //this.alertMessage = body.message;
+          }
+        }
+    );
+  }
+}

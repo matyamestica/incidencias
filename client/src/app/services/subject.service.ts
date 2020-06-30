@@ -21,7 +21,7 @@ export class SubjectService{
       'Content-type':'application/json',
       'Authorization':token
     });
-    
+
     let options = new RequestOptions({ headers: headers});
     return this._http.get(this.url+'subjects/'+page, options)
                       .map(res => res.json());
@@ -36,5 +36,15 @@ export class SubjectService{
 
       return this._http.post(this.url+'subject',params, {headers: headers})
                         .map(res => res.json());
+  }
+
+  deleteSubject(token, id:string){
+    let headers = new Headers({
+      'content-type':'aplication/json',
+      'Authorization':token
+    });
+    let options = new RequestOptions({headers: headers});
+    return this._http.delete(this.url+'subject/'+id, options)
+                     .map(res => res.json());
   }
 }
