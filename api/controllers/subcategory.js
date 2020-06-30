@@ -30,7 +30,7 @@ function getSubcategories(req, res){
         var page = 1;
     }
    
-    var itemsPerPage = 5;
+    var itemsPerPage = 15;
 
     Subcategory.find().sort('name').paginate(page, itemsPerPage, function(err, subcategories, total){
         if(err){

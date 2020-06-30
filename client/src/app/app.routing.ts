@@ -12,6 +12,7 @@ import { NewCategoryComponent } from './components/new-category/new-category.com
 
 //import subcategory
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
+import { SubcategoriesListComponent } from './components/subcategories-list/subcategories-list.component';
 
 //import subject
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     {path: 'new-subject', component: NewSubjectComponent},
     {path: 'subject-list', component: SubjectListComponent},
     {path: 'categories-list', component: CategoriesListComponent},
+    {path: 'subcategories-list', component: SubcategoriesListComponent},
     {path: 'mis-datos', component: UserEditComponent},
     {path: '**', component: HomeComponent}
 ];
