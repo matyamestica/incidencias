@@ -35,7 +35,7 @@ export class CategoriesListComponent implements OnInit {
         this.url = GLOBAL.url;
         this.next_page = 1;
         this.prev_page = 1;
-      } 
+      }
   ngOnInit() {
     console.log('categories-list.component.ts cargado');
 
@@ -82,8 +82,8 @@ export class CategoriesListComponent implements OnInit {
   deleteCategory(id){
     this._categoryService.deleteCategory(this.token, id).subscribe(
       response => {
-        if(!response.category){
-          alert('Categoría eliminada');
+        if(!response.categories){
+          //alert('Error en el servidor');
         }
           this.getCategories();
         },

@@ -25,7 +25,10 @@
       <td>{{category.name}}</td>
       <td>{{category.description}}</td>
       <td>{{category.date}}</td>
-      <td class="w3-right-align"><button class="btn" style="background-color: yellow;"><i class="fa fa-bars"></i></button><button (click)="deleteCategory(category._id)" class="btn"><i class="fa fa-trash"></i></button></td>
+      <td class="w3-right-align">
+          <a class="btn" style="background-color: blue;"><i class="fa fa-bars"></i></a>
+          <a (click)="deleteCategory(category._id)" class="btn"><i class="fa fa-trash"></i></a>
+      </td>
     </tr>
   </table>
 </div>

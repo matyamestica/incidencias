@@ -1,16 +1,35 @@
 
+
 <div class="head page" *ngIf="identity">
-  <h1>{{titulo}}</h1>
+  <div>
+    <h1>{{titulo}}</h1>
+    <div class="a">
+      <button [routerLink]="['/new-subject']" [routerLinkActive]="['actived']" class="button">Añadir nuevo ramo</button>
+    </div>
+  </div>
 
-<a [routerLink]="['/new-subject']" [routerLinkActive]="['actived']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
-    Añadir Ramo
-</a>
+</div>
+
+
+<br>
 <div class="w3-container">
-<div class="clearfix"></div>
-  <ul class="subject-list" *ngIf="identity">
-    <li *ngFor="let subject of subjects" clas="col-lg-3 subject-item">
-      {{subject.name}}
-    </li>
-  </ul>
-
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>Nombre Ramo</th>
+        <th>Codigo</th>
+        <th>Profesor</th>
+        <th class="w3-right-align">Editar / Eliminar</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let subject of subjects" class="w3-hover-blue">
+      <td>{{subject.name}}</td>
+      <td>{{subject.code}}</td>
+      <td>{{subject.teacher}}</td>
+      <td class="w3-right-align">
+          <a class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
+          <a (click)="deleteSubject(subject._id)" class="btn"><i class="fa fa-trash"></i></a>
+      </td>
+    </tr>
+  </table>
 </div>

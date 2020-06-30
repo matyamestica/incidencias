@@ -20,12 +20,12 @@ export class CategoryService{
       'Content-type':'application/json',
       'Authorization':token
     });
-    
+
     let options = new RequestOptions({ headers: headers});
     return this._http.get(this.url+'categories/'+page, options)
                       .map(res => res.json());
   }
-  
+
   addCategory(token, category: Category){
     let params = JSON.stringify(category);
     let headers = new Headers({
@@ -41,7 +41,7 @@ export class CategoryService{
       'Content-type':'application/json',
       'Authorization':token
     });
-    
+
     let options = new RequestOptions({ headers: headers});
     return this._http.delete(this.url+'category/'+id, options)
                       .map(res => res.json());
