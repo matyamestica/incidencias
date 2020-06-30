@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     {path: 'new-category', component: NewCategoryComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
-    {path: 'categories/:page', component: CategoriesListComponent},
+    {path: 'categories-list', component: CategoriesListComponent},
     {path: 'mis-datos', component: UserEditComponent},
     {path: '**', component: HomeComponent}
 ];
