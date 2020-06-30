@@ -53,7 +53,7 @@ function getCategories(req, res){
         var page = 1;
     }
    
-    var itemsPerPage = 5;
+    var itemsPerPage = 15;
 
     Category.find().sort('name').paginate(page, itemsPerPage, function(err, categories, total){
         if(err){
