@@ -79,4 +79,23 @@ export class CategoriesListComponent implements OnInit {
     });
   }
 
+  deleteCategory(id){
+    this._categoryService.deleteCategory(this.token, id).subscribe(
+      response => {
+        if(!response.category){
+          alert('Error en el servidor');
+        }
+          this.getCategories();
+        },
+        error => {
+          var errorMessage = <any>error;
+
+          if(errorMessage != null){
+            var body = JSON.parse(error._body);
+            //this.alertMessage = body.message;
+          }
+        }
+    );
+  }
+
 }
