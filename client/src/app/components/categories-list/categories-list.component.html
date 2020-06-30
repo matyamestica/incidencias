@@ -1,16 +1,41 @@
 
 <div class="head page" *ngIf="identity">
-  <h1>{{titulo}}</h1>
+  <div>
+    <td>
+        <h1>{{titulo}}</h1>
+    </td>
+    <td>
+        <div class="card" *ngIf="identity.role == 'ROLE_ADMIN'">
+            <button [routerLink]="['/new-category']" [routerLinkActive]="['actived']" class="button">Añadir nueva categoria</button>
+        </div>
+    </td>
+  </div>
 
-<a [routerLink]="['/new-category']" [routerLinkActive]="['actived']" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-success">
-    Añadir Categoría
-</a>
+
+  <div class="w3-container">
+  <div class="clearfix"></div>
+    <ul class="categories-list" *ngIf="identity">
+      <li *ngFor="let category of categories" clas="col-lg-3 category-item">
+        {{category.name}}
+      </li>
+    </ul>
+
+  </div>
 <div class="w3-container">
-<div class="clearfix"></div>
-  <ul class="categories-list" *ngIf="identity">
-    <li *ngFor="let category of categories" clas="col-lg-3 category-item">
-      {{category.name}}
-    </li>
-  </ul>
+  <h2>{{titulo}}</h2>
 
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>Nombre Categoria</th>
+        <th>Descripción</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let category of categories">
+      <td>{{category.name}}</td>
+      <td>{{category.description}}</td>
+      <td><button class="w3-button w3-circle w3-blue"></button> <button class="w3-button w3-circle w3-red">-</button></td>
+    </tr>
+  </table>
 </div>
