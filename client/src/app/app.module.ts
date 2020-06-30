@@ -10,6 +10,7 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { NewCategoryComponent } from './components/new-category/new-category.component';
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -20,7 +21,8 @@ import { NewSubjectComponent } from './components/new-subject/new-subject.compon
     CategoriesListComponent,
     NewCategoryComponent,
     NewSubcategoryComponent,
-    NewSubjectComponent
+    NewSubjectComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
