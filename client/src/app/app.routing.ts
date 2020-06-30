@@ -1,3 +1,4 @@
+import { HomeComponent } from './components/home/home.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,13 +17,13 @@ import { NewSubcategoryComponent } from './components/new-subcategory/new-subcat
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
 
 const appRoutes: Routes = [
-    {path: '', component: CategoriesListComponent},
+    {path: '', component: HomeComponent},
     {path: 'new-category', component: NewCategoryComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
     {path: 'categories/:page', component: CategoriesListComponent},
     {path: 'mis-datos', component: UserEditComponent},
-    {path: '**', component: CategoriesListComponent}
+    {path: '**', component: HomeComponent}
 ];
 
 export const appRoutingProviders: any[] = [];

@@ -1,6 +1,7 @@
 import { UserService } from './services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class AppComponent  implements OnInit{
 
 
   constructor(
-    private _userService: UserService
+    private _userService: UserService,
+    private _route: ActivatedRoute,
+    private _router: Router
   ){
     this.user = new User('','','','','','','','ROLE_USER','','','');
     this.user_register = new User('','','','','','','','ROLE_USER','','','');
@@ -97,6 +100,7 @@ export class AppComponent  implements OnInit{
     localStorage.clear();
     this.identity = null;
     this.token = null;
+    this._router.navigate(['/']);
   }
 
 
