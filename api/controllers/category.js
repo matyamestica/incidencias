@@ -31,6 +31,7 @@ function saveCategory(req, res){
     var params = req.body;
     category.name = params.name;
     category.description = params.description;
+    category.date = params.date;
     category.file = 'null';
 
     category.save((err, categoryStored) => {
