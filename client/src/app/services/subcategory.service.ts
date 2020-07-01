@@ -36,5 +36,28 @@ export class SubcategoryService{
     let options = new RequestOptions({ headers: headers});
     return this._http.get(this.url+'subcategories/'+page, options)
                       .map(res => res.json());
-  }  
+  }
+
+
+
+  getCategories(token, page){
+    let headers = new Headers({
+      'Content-type':'application/json',
+      'Authorization':token
+    });
+
+    let options = new RequestOptions({ headers: headers});
+    return this._http.get(this.url+'categories/'+page, options)
+                      .map(res => res.json());
+  }
 }
+
+
+
+
+
+
+
+
+
+
