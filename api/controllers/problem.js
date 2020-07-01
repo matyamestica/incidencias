@@ -44,7 +44,33 @@ function saveProblem(req, res){
     });
 }
 
+function getProblems(req, res){
+    if(req.params.page){
+        var page = req.params.page;
+    }else{
+        var page = 1;
+    }
+   
+    var itemsPerPage = 15;
+
+    Problem.find().sort('name').paginate(page, itemsPerPage, function(err, problems, total){
+        if(err){
+            res.status(500).send({message:'Error en la petición'});
+        }else{
+            if(!problems){
+                res.status(404).send({message: 'No hay incidencias'});
+            }else{
+                return res.status(200).send({
+                    total_items: total,
+                    problems: problems
+                });
+            }
+        }
+    });
+}
+
 module.exports = {
     getProblem,
+    getProblems,
     saveProblem
 }
