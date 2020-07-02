@@ -1,7 +1,7 @@
 export class Problem{
   constructor(
     public _id: string,
-    public codigo: string,
+    public code: string,
     public user_create: string,
     public description: string,
     public user_secretary: string,
@@ -11,6 +11,6 @@ export class Problem{
     public category: string,
     public state: string,
     public date_create: string,
-    public date_fin
+    public date_fin: string
   ){}
 }
