@@ -68,7 +68,7 @@ export class NewProblemComponent implements OnInit {
           if(!response.problem){
             this.alertMessage = 'Error en el servidor';
           }else{
-            this.alertMessage = 'La categoría se ha creado exitosamente!';
+            this.alertMessage = 'El problema se ha creado exitosamente!';
             this.problem = response.problem;
             //this._router.navigate(['/category-edit'], response.category._id);
           }
@@ -81,7 +81,7 @@ export class NewProblemComponent implements OnInit {
         this.alertMessage = body.message;
 
         console.log(error);
-      }    
+      }
       }
     )
   }
@@ -190,5 +190,5 @@ export class NewProblemComponent implements OnInit {
         }
       )
     });
-  }    
-}  
+  }
+}

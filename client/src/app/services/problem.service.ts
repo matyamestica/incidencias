@@ -1,9 +1,13 @@
+import { Subject } from './../models/subject';
+import { Subcategory } from 'app/models/subcategory';
+import { Category } from 'app/models/category';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from './global';
 import { Problem } from './../models/problem';
+
 
 @Injectable()
 export class ProblemService{
@@ -86,5 +90,5 @@ export class ProblemService{
       this.token = null;
     }
     return this.token;
-  }  
-}  
+  }
+}

@@ -72,48 +72,41 @@ export class NewSubcategoryComponent implements OnInit {
       }
     );
   }
+  getCategories(){
+    this._route.params.forEach((params: Params) => {
+      let page = +params['page'];
+      if(!page){
+        page = 1;
+      }else{
+        this.next_page = page + 1;
+        this.prev_page = page - 1;
 
-
-
-
-
-
-
-      getCategories(){
-        this._route.params.forEach((params: Params) => {
-          let page = +params['page'];
-          if(!page){
-            page = 1;
-          }else{
-            this.next_page = page + 1;
-            this.prev_page = page - 1;
-
-            if(this.prev_page == 0){
-              this.prev_page = 1;
-            }
-          }
-
-          this._categoryService.getCategories(this.token, page).subscribe(
-            response => {
-              if(!response.categories){
-                this._router.navigate(['/']);
-              }else{
-                this.categories = response.categories;
-              }
-            },
-            error => {
-              var errorMessage = <any>error;
-
-              if(errorMessage != null){
-                var body = JSON.parse(error._body);
-                //this.alertMessage = body.message;
-
-                console.log(error);
-              }
-            }
-          )
-        });
+        if(this.prev_page == 0){
+          this.prev_page = 1;
+        }
       }
+
+      this._categoryService.getCategories(this.token, page).subscribe(
+        response => {
+          if(!response.categories){
+            this._router.navigate(['/']);
+          }else{
+            this.categories = response.categories;
+          }
+        },
+        error => {
+          var errorMessage = <any>error;
+
+          if(errorMessage != null){
+            var body = JSON.parse(error._body);
+            //this.alertMessage = body.message;
+
+            console.log(error);
+          }
+        }
+      )
+    });
+  }
 
 
 }
