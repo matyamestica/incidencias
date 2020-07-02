@@ -23,6 +23,7 @@ import { SubjectService } from 'app/services/subject.service';
 })
 export class NewProblemComponent implements OnInit {
   public titulo: string;
+  public user: User;
   public problem: Problem;
   public categories: Category[];
   public subcategories: Subcategory[];

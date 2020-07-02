@@ -64,5 +64,27 @@ export class ProblemService{
     let options = new RequestOptions({ headers: headers});
     return this._http.get(this.url+'subjects/'+page, options)
                       .map(res => res.json());
+  }
+  getIdentity(){
+    let identity = JSON.parse(localStorage.getItem('identity'));
+
+    if(identity != "undefined"){
+      this.identity = identity;
+    }else{
+      identity = null;
+    }
+    return this.identity;
+
+  }
+
+  getToken(){
+    let token = localStorage.getItem('token');
+
+    if(token !="undefined"){
+      this.token = token;
+    }else{
+      this.token = null;
+    }
+    return this.token;
   }  
 }  
