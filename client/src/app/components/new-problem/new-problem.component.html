@@ -9,8 +9,7 @@
     <div class="w3-col" style="width:150px"><h3>Nombre</h3></div>
       <div class="w3-rest">
         <h3>{{identity.name}} {{identity.surname}}</h3>
-
-        <select hidden class="hidden" #name="ngModel" name="user_create" [(ngModel)]="problem.user_create">
+        <select #name="ngModel" name="user_create" [(ngModel)]="problem.user_create">
           <option [ngValue]="identity._id">{{identity.name}}</option>
         </select>
       </div>
