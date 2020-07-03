@@ -58,7 +58,7 @@ function getProblems(req, res){
             res.status(500).send({message:'Error en la petición'});
         }else{
             if(!problems){
-                res.status(404).send({message: 'No hay incidencias'});
+                res.status(404).send({message: 'No hay ramos'});
             }else{
                 return res.status(200).send({
                     total_items: total,
@@ -67,6 +67,7 @@ function getProblems(req, res){
             }
         }
     });
+
 }
 
 module.exports = {

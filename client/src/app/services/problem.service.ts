@@ -26,7 +26,7 @@ export class ProblemService{
     });
 
     let options = new RequestOptions({ headers: headers});
-    return this._http.get(this.url+'problems/'+page, options)
+    return this._http.get(this.url+'problems/', options)
                       .map(res => res.json());
   }
   addProblem(token, problem: Problem){
