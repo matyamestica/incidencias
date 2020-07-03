@@ -15,6 +15,7 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
 import { SubcategoriesListComponent } from './components/subcategories-list/subcategories-list.component';
 import { ProblemsListComponent } from './components/problems-list/problems-list.component';
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
+import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 
 
 
@@ -30,7 +31,8 @@ import { NewProblemComponent } from './components/new-problem/new-problem.compon
     SubjectListComponent,
     SubcategoriesListComponent,
     ProblemsListComponent,
-    NewProblemComponent
+    NewProblemComponent,
+    NewAnswerComponent
   ],
   imports: [
     BrowserModule,

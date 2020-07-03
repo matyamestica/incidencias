@@ -22,12 +22,17 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
 import { ProblemsListComponent } from './components/problems-list/problems-list.component';
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
 
+//import answer
+import { NewAnswerComponent } from './components/new-answer/new-answer.component';
+
+
 
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'new-category', component: NewCategoryComponent},
     {path: 'new-problem', component: NewProblemComponent},
+    {path: 'new-answer', component: NewAnswerComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
     {path: 'subject-list', component: SubjectListComponent},
