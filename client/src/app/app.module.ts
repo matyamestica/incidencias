@@ -16,6 +16,7 @@ import { SubcategoriesListComponent } from './components/subcategories-list/subc
 import { ProblemsListComponent } from './components/problems-list/problems-list.component';
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
+import { SubjectEditComponent } from './components/subject-edit/subject-edit.component';
 
 
 
@@ -32,7 +33,8 @@ import { NewAnswerComponent } from './components/new-answer/new-answer.component
     SubcategoriesListComponent,
     ProblemsListComponent,
     NewProblemComponent,
-    NewAnswerComponent
+    NewAnswerComponent,
+    SubjectEditComponent
   ],
   imports: [
     BrowserModule,
