@@ -5,7 +5,7 @@ import { Subcategory } from 'app/models/subcategory';
 import { Category } from 'app/models/category';
 import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
-import { Problem }  from '../../models/problem';
+import { Problem } from '../../models/problem';
 import { ProblemService } from 'app/services/problem.service';
 import { CategoryService } from 'app/services/category.service';
 import { SubcategoryService } from '../../services/subcategory.service';
@@ -94,7 +94,7 @@ export class ProblemsListComponent implements OnInit {
       )
     });
   }
- 
+
   getCategories(){
     this._route.params.forEach((params: Params) => {
       let page = +params['page'];
@@ -200,5 +200,5 @@ export class ProblemsListComponent implements OnInit {
         }
       )
     });
-  } 
-}      
+  }
+}
