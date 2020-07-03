@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
-import { Problem }  from '../../models/problem';
+import { Problem } from '../../models/problem';
 import { ProblemService } from 'app/services/problem.service';
 
 @Component({
@@ -77,4 +77,4 @@ export class ProblemsListComponent implements OnInit {
       )
     });
   }
-}      
+}
