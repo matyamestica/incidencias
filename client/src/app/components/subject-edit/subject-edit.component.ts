@@ -74,7 +74,7 @@ this._route.params.forEach((params: Params) => {
 
             this._subjectService.editSubject(this.token,id , this.subject).subscribe(
                 response => {
-                    this.subject = response.artist;
+                    this.subject = response.subject;
 
                     if(!response.subject){
                         this.alertMessage = 'Error en el servidor';
