@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     {path: 'new-answer', component: NewAnswerComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
-    {path: 'subject-edit', component: SubjectEditComponent},
+    {path: 'subject-edit/:id', component: SubjectEditComponent},
     {path: 'subject-list', component: SubjectListComponent},
     {path: 'problems-list', component: ProblemsListComponent},
     {path: 'categories-list', component: CategoriesListComponent},
