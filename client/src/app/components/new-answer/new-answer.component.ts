@@ -39,4 +39,29 @@ export class NewAnswerComponent implements OnInit {
     console.log('new-answer.components.ts cargado');
   }
 
+  onSubmit(){
+    console.log(this.answer);
+    this._answerService.addAnswer(this.token, this.answer).subscribe(
+      response => {
+          if(!response.category){
+            this.alertMessage = 'Error en el servidor';
+          }else{
+            this.alertMessage = 'La categoría se ha creado exitosamente!';
+            this.answer = response.answer;
+            //this._router.navigate(['/category-edit'], response.category._id);
+          }
+
+      },
+      error => {
+          var errorMessage = <any>error;
+      if(errorMessage !=null){
+        var body = JSON.parse(error._body);
+        this.alertMessage = body.message;
+
+        console.log(error);
+      }    
+      }
+    )
+  }
+
 }

@@ -18,4 +18,15 @@ export class AnswerService {
  constructor(private _http: Http){
     this.url = GLOBAL.url;
   }
+
+  addAnswer(token, answer: Answer){
+    let params = JSON.stringify(answer);
+    let headers = new Headers({
+        'Content-type':'application/json',
+        'Authorization':token
+    });
+
+    return this._http.post(this.url+'answer',params, {headers: headers})
+                     .map(res => res.json());
+  }
 }

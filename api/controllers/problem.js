@@ -9,7 +9,19 @@ var Subject = require('../models/subject');
 var User = require('../models/user');
 
 function getProblem(req, res){
-    res.status(200).send({message: 'Método getProblem del controlador Problem'});
+    var problemId = req.params.id;
+
+    Problem.findById(problemId, (err, problem) => {
+        if(err){
+            res.status(500).send({message: 'Error en la petición'});
+        }else{
+            if(!problem){
+                res.status(404).send({message: 'La categoría no existe'});
+            }else{
+                res.status(200).send({problem});
+            }
+        }
+    });
 }
 
 function saveProblem(req, res){
@@ -58,7 +70,7 @@ function getProblems(req, res){
             res.status(500).send({message:'Error en la petición'});
         }else{
             if(!problems){
-                res.status(404).send({message: 'No hay incidencias'});
+                res.status(404).send({message: 'No hay ramos'});
             }else{
                 return res.status(200).send({
                     total_items: total,
@@ -67,6 +79,7 @@ function getProblems(req, res){
             }
         }
     });
+
 }
 
 module.exports = {
