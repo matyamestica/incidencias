@@ -53,8 +53,8 @@ export class SubjectService{
         'Content-Type':'application/json',
         'Authorization':token
     });
-  
-         return this._http.put(this.url+'subject/'+id, params, {headers: headers})
+
+         return this._http.put(this.url+'subject-edit/'+id, params, {headers: headers})
                          .map(res => res.json());
   }
 
