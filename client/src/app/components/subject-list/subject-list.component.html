@@ -27,7 +27,7 @@
       <td>{{subject.code}}</td>
       <td>{{subject.teacher}}</td>
       <td class="w3-right-align">
-          <a (click)="updateSubject(subject._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
+          <a [routerLink]="['/subject-edit']" [routerLinkActive]="['actived']" (click)="editSubject(subject._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
           <a (click)="deleteSubject(subject._id)" class="btn"><i class="fa fa-trash"></i></a>
       </td>
     </tr>
