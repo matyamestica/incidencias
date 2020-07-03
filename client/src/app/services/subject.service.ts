@@ -54,7 +54,7 @@ export class SubjectService{
         'Authorization':token
     });
 
-         return this._http.put(this.url+'subject/'+id, params, {headers: headers})
+         return this._http.put(this.url+'update-subject/'+id, params, {headers: headers})
                          .map(res => res.json());
   }
 

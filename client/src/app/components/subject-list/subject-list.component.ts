@@ -14,6 +14,7 @@ import { Subject } from '../../models/subject';
 export class SubjectListComponent implements OnInit {
   public titulo: string;
   public subjects: Subject[];
+  public subject: Subject;
   public identity;
   public token;
   public url: string;
@@ -40,6 +41,30 @@ export class SubjectListComponent implements OnInit {
     //Conseguir el listado de Categorías
     this.getSubjects();
   }
+  getSubject(){
+    this._route.params.forEach((params: Params) => {
+            let id = params['id'];
+
+            this._subjectService.getSubject(this.token, id).subscribe(
+                response => {
+                        if(!response.subject){
+                            this._router.navigate(['/']);
+                        }else{
+                            this.subject = response.subject;    
+                        }
+                },
+                error => {
+                var errorMessage = <any>error;
+
+                if(errorMessage != null){
+                var body = JSON.parse(error._body);
+                //this.errorMessage = body.message;
+                console.log(error);
+                }
+            }
+            );
+    });
+}
 
   getSubjects(){
     this._route.params.forEach((params: Params) => {
