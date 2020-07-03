@@ -4,6 +4,7 @@ import { User } from 'app/models/user';
 
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -29,6 +30,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     console.log('home.component.ts esta cargado beibi');
-  }
-
+  } 
 }
