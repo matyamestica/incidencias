@@ -17,6 +17,8 @@ import { SubcategoriesListComponent } from './components/subcategories-list/subc
 //import subject
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
+import { SubjectEditComponent } from './components/subject-edit/subject-edit.component';
+
 
 //import problem
 import { ProblemsListComponent } from './components/problems-list/problems-list.component';
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     {path: 'new-answer', component: NewAnswerComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
+    {path: 'subject-edit', component: SubjectEditComponent},
     {path: 'subject-list', component: SubjectListComponent},
     {path: 'problems-list', component: ProblemsListComponent},
     {path: 'categories-list', component: CategoriesListComponent},
