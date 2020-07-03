@@ -36,6 +36,7 @@ export class SubjectEditComponent implements OnInit {
     this.token = this._userService.getToken();
     this.user = this.identity;
     this.url = GLOBAL.url;
+    this.subject = new Subject('','','','');
     this.is_edit = true;
    }
 
@@ -52,7 +53,7 @@ export class SubjectEditComponent implements OnInit {
                         if(!response.subject){
                             this._router.navigate(['/']);
                         }else{
-                            this.subject = response.subject;    
+                            this.subject = response.subject;
                         }
                 },
                 error => {
@@ -69,12 +70,12 @@ export class SubjectEditComponent implements OnInit {
 }
   onSubmit(){
     console.log(this.subject);
-this._route.params.forEach((params: Params) => {
+    this._route.params.forEach((params: Params) => {
         let id = params['id'];
 
             this._subjectService.editSubject(this.token,id , this.subject).subscribe(
                 response => {
-                    this.subject = response.artist;
+                    this.subject = response.subject;
 
                     if(!response.subject){
                         this.alertMessage = 'Error en el servidor';
