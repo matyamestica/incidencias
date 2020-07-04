@@ -9,10 +9,12 @@ import { UserEditComponent } from './components/user-edit.component';
 // import category
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { NewCategoryComponent } from './components/new-category/new-category.component';
+import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 
 //import subcategory
 import { NewSubcategoryComponent } from './components/new-subcategory/new-subcategory.component';
 import { SubcategoriesListComponent } from './components/subcategories-list/subcategories-list.component';
+import { SubcategoryEditComponent } from './components/subcategory-edit/subcategory-edit.component';
 
 //import subject
 import { NewSubjectComponent } from './components/new-subject/new-subject.component';
@@ -37,6 +39,8 @@ const appRoutes: Routes = [
     {path: 'new-answer', component: NewAnswerComponent},
     {path: 'new-subcategory', component: NewSubcategoryComponent},
     {path: 'new-subject', component: NewSubjectComponent},
+    {path: 'category-edit/:id', component: CategoryEditComponent},
+    {path: 'subcategory-edit/:id', component: SubcategoryEditComponent},
     {path: 'subject-edit/:id', component: SubjectEditComponent},
     {path: 'subject-list', component: SubjectListComponent},
     {path: 'problems-list', component: ProblemsListComponent},
