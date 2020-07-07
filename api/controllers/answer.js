@@ -10,6 +10,7 @@ var Subcategory = require('../models/subcategory');
 var Subject = require('../models/subject');
 var User = require('../models/user');
 const answer = require('../models/answer');
+var nodemailer = require('nodemailer');
 
 function getAnswers(req, res){
     if(req.params.page){
@@ -54,13 +55,45 @@ function saveAnswer(req, res){
                 res.status(404).send({message: 'La respuesta no ha sido guardado'});
             }else{
                 res.status(200).send({answer: answerStored});
+                sendEmail();
             }
         }
     });
 
 }
 
+function sendEmail(req, res){
+ 
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'incidencias.ucatolicadelmaule@gmail.com',
+        pass: 'incidenciasucm',
+    },
+});
+    var mailOptions = {
+        from: 'incidencias.ucatolicadelmaule@gmail.com',
+        to: 'maty6289@live.cl,marco.cgonzalez19@gmail.com',
+        subject: 'Enviado desde nodemailer',
+        text: 'Funciona el envío de correos'
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error){
+            res.status(500).send(error.message);
+        }else{
+            console.log('Email enviado');
+            res.status(200).jsonp(req.body);
+        }
+    });   
+
+    
+}
+
 module.exports = {
     getAnswers,
-    saveAnswer
+    saveAnswer,
+    sendEmail
 }
