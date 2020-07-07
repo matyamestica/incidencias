@@ -26,7 +26,7 @@
       <td>{{subcategory.description}}</td>
       <td >{{subcategory.category}}</td>
       <td class="w3-right-align">
-          <a [routerLink]="['/subcategory-edit', subcategory._id]" [routerLinkActive]="['actived']" (click)="editSubcategory(subcategory._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
+          <a class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
           <a (click)="deleteSubcategory(subcategory._id)" class="btn"><i class="fa fa-trash"></i></a>
       </td>
     </tr>

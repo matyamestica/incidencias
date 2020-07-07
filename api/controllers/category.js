@@ -70,22 +70,6 @@ function getCategories(req, res){
             }
         }
     });
-}
-function updateCategory(req, res){
-    var categoryId = req.params.id;
-    var update = req.body;
-
-    Category.findByIdAndUpdate(categoryId, update, (err, categoryUpdated) => {
-        if(err){
-            res.status(500).send({message: 'Error al guardar el Ramo'});
-        }else{
-            if(!categoryUpdated){
-                res.status(500).send({message: 'Error al actualizar el Ramo'});
-            }else{
-                res.status(200).send({category: categoryUpdated});
-            }
-        }
-    });
 }    
     function deleteCategory(req, res){
         var categoryId = req.params.id;
@@ -108,7 +92,6 @@ module.exports = {
     getCategory,
     getCategories,
     saveCategory,
-    updateCategory,
     deleteCategory
 
 }
