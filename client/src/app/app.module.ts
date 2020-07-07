@@ -15,7 +15,6 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
 import { SubcategoriesListComponent } from './components/subcategories-list/subcategories-list.component';
 import { ProblemsListComponent } from './components/problems-list/problems-list.component';
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
-import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 import { SubjectEditComponent } from './components/subject-edit/subject-edit.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 import { SubcategoryEditComponent } from './components/subcategory-edit/subcategory-edit.component';
@@ -35,7 +34,6 @@ import { SubcategoryEditComponent } from './components/subcategory-edit/subcateg
     SubcategoriesListComponent,
     ProblemsListComponent,
     NewProblemComponent,
-    NewAnswerComponent,
     SubjectEditComponent,
     CategoryEditComponent,
     SubcategoryEditComponent

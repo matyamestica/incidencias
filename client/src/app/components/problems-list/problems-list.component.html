@@ -33,7 +33,7 @@
       <td>{{problem.subject}}</td>
       <td>{{problem.date_create}}</td>
       <td class="w3-right-align">
-          <a class="btn" style="background-color: blue;"><i class="fa fa-bars"></i></a>
+          <a [routerLink]="['/new-answer']" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
           <a (click)="deleteProblem(problem._id)" class="btn"><i class="fa fa-trash"></i></a>
       </td>
     </tr>

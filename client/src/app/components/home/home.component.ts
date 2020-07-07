@@ -29,6 +29,6 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log('home.component.ts esta cargado beibi');
-  } 
+    console.log('home.component.ts esta cargado');
+  }
 }
