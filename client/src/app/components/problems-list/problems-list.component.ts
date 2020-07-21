@@ -49,6 +49,7 @@ export class ProblemsListComponent implements OnInit {
         this.url = GLOBAL.url;
         this.next_page = 1;
         this.prev_page = 1;
+        
       }
   ngOnInit() {
     console.log('problems-list.component.ts cargado');

@@ -2,6 +2,7 @@
 
 var path = require('path');
 var fs = require('fs');
+var moment = require('moment');
 
 var Problem = require('../models/problem');
 var Subcategory = require('../models/subcategory');
@@ -29,7 +30,8 @@ function saveProblem(req, res){
 
     var params = req.body;
     console.log(params);
-
+    var hourFin = new Date();
+    hourFin = moment().add(1, 'hours');
     problem.code = params.code;
     problem.user_create = params.user_create;
     problem.description = params.description;
@@ -39,9 +41,9 @@ function saveProblem(req, res){
     problem.subject = params.subject;
     problem.category = params.category;
     problem.subcategory = params.subcategory;
-    problem.state = params.state;
-    problem.date_create = 'null';//MODIFICAR PARA OBTENER FECHA DE CREACIÓN
-    problem.date_fin = 'null';//MODIFICAR PARA OBTENER FECHA DE CIERRE
+    problem.state = "active";
+    problem.date_create = new Date();//MODIFICAR PARA OBTENER FECHA DE CREACIÓN
+    problem.date_fin = hourFin;//MODIFICAR PARA OBTENER FECHA DE CIERRE
 
     problem.save((err, problemStored) => {
         if(err){
