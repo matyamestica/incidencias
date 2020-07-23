@@ -2,7 +2,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { UserEditComponent } from './components/user-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { NewProblemComponent } from './components/new-problem/new-problem.compon
 import { SubjectEditComponent } from './components/subject-edit/subject-edit.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 import { SubcategoryEditComponent } from './components/subcategory-edit/subcategory-edit.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 
@@ -36,11 +38,14 @@ import { SubcategoryEditComponent } from './components/subcategory-edit/subcateg
     NewProblemComponent,
     SubjectEditComponent,
     CategoryEditComponent,
-    SubcategoryEditComponent
+    SubcategoryEditComponent,
+    SearchComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routing
   ],

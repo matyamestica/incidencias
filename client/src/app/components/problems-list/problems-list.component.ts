@@ -20,6 +20,13 @@ import { SubjectService } from './../../services/subject.service';
   styleUrls: ['./problems-list.component.css']
 })
 export class ProblemsListComponent implements OnInit {
+
+      handleSearch(value: string){
+       this.filtro_valor = value
+      }
+
+      filtro_valor = ''
+
         public titulo: string;
         public problems: Problem[];
         public categories: Category[];
@@ -49,7 +56,9 @@ export class ProblemsListComponent implements OnInit {
         this.url = GLOBAL.url;
         this.next_page = 1;
         this.prev_page = 1;
+        
       }
+
   ngOnInit() {
     console.log('problems-list.component.ts cargado');
 
@@ -59,6 +68,8 @@ export class ProblemsListComponent implements OnInit {
     this.getSubcategories();
     this.getSubjects();
   }
+
+
   getProblems(){
     this._route.params.forEach((params: Params) => {
       let page = +params['page'];
@@ -79,6 +90,7 @@ export class ProblemsListComponent implements OnInit {
             this._router.navigate(['/']);
           }else{
             this.problems = response.problems;
+            let problemas: any[] = this.problems;
           }
         },
         error => {
