@@ -1,5 +1,6 @@
 'use strict'
 
+var moment = require('moment');
 var path = require('path');
 var fs = require('fs');
 
@@ -31,7 +32,7 @@ function saveCategory(req, res){
     var params = req.body;
     category.name = params.name;
     category.description = params.description;
-    category.date = params.date;
+    category.date = new Date();
     category.file = 'null';
 
     category.save((err, categoryStored) => {

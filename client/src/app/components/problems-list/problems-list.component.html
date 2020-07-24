@@ -1,11 +1,17 @@
 <div class="head page" *ngIf="identity">
-  <div>
-    <h1>{{titulo}}</h1>
-    <div class="a">
-      <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']" class="button">Añadir nueva Incidencia</button>
-</div>
-  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <h1>{{titulo}}</h1>
+      <div class="a">
+        <button [routerLink]="['/problems-list']" [routerLinkActive]="['actived']" class="button">Añadir nueva Incidencia</button>
 
+      </div>
+    </div>
+    <div class="w3-half">
+      <label>Introduce la busqueda (solo por nombre)</label>
+      <app-search (search)="handleSearch($event)"></app-search>
+    </div>
+  </div>
 </div>
 
 <br>
@@ -34,9 +40,9 @@
       <td class="w3-right-align">
           <a [routerLink]="['/new-answer']" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
           <a (click)="deleteProblem(problem._id)" class="btn"><i class="fa fa-trash"></i></a>
-          
+
       </td>
     </tr>
   </table>
 </div>
-<app-search (search)="handleSearch($event)"></app-search>
+
