@@ -8,7 +8,6 @@
 
 </div>
 
-
 <br>
 <div class="w3-container">
   <table class="w3-table-all w3-hoverable">
@@ -24,13 +23,13 @@
         <th class="w3-right-align">Editar / Eliminar</th>
       </tr>
     </thead>
-    <tr *ngFor="let problem of problems" class="w3-hover-blue">
-      <td>{{problem.user_create}}</td>
+    <tr *ngFor="let problem of problems | search:filtro_valor" class="w3-hover-blue">
+      <td>{{problem.user_create.name}}</td>
       <td>{{problem.description}}</td>
       <td>{{problem.state}}</td>
-      <td>{{problem.subcategory}}</td>
-      <td>{{problem.category}}</td>
-      <td>{{problem.subject}}</td>
+      <td>{{problem.subcategory.name}}</td>
+      <td>{{problem.category.name}}</td>
+      <td>{{problem.subject.name}}</td>
       <td>{{problem.date_create}}</td>
       <td class="w3-right-align">
           <a [routerLink]="['/new-answer']" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
@@ -40,3 +39,4 @@
     </tr>
   </table>
 </div>
+<app-search (search)="handleSearch($event)"></app-search>

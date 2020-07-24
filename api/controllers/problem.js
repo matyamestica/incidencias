@@ -72,7 +72,7 @@ function getProblems(req, res){
    
     var itemsPerPage = 15;
 
-    Problem.find().sort('name').paginate(page, itemsPerPage, function(err, problems, total){
+    Problem.find().populate({path: 'user_create'}).populate({path: 'category'}).populate({path: 'subcategory'}).populate({path: 'subject'}).sort('name').paginate(page, itemsPerPage, function(err, problems, total){
         if(err){
             res.status(500).send({message:'Error en la petición'});
         }else{

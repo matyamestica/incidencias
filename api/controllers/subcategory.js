@@ -32,7 +32,7 @@ function getSubcategories(req, res){
    
     var itemsPerPage = 15;
 
-    Subcategory.find().sort('name').paginate(page, itemsPerPage, function(err, subcategories, total){
+    Subcategory.find().populate({path: 'category'}).sort('name').paginate(page, itemsPerPage, function(err, subcategories, total){
         if(err){
             res.status(500).send({message:'Error en la petición'});
         }else{

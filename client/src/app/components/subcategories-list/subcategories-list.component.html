@@ -24,7 +24,7 @@
     <tr *ngFor="let subcategory of subcategories" class="w3-hover-blue">
       <td>{{subcategory.name}}</td>
       <td>{{subcategory.description}}</td>
-      <td >{{subcategory.category}}</td>
+      <td >{{subcategory.category.name}}</td>
       <td class="w3-right-align">
           <a [routerLink]="['/subcategory-edit', subcategory._id]" [routerLinkActive]="['actived']" (click)="editSubcategory(subcategory._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
           
