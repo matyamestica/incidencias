@@ -26,9 +26,36 @@
       <td>{{category.description}}</td>
       <td>{{category.date}}</td>
       <td class="w3-right-align">
-          <a [routerLink]="['/category-edit', category._id]" [routerLinkActive]="['actived']" (click)="editCategory(category._id)" class="btn" style="background-color: blue;"><i class="fa fa-bars"></i></a>
-          <a (click)="deleteCategory(category._id)" class="btn"><i class="fa fa-trash"></i></a>
+
+
+              <a [routerLink]="['/category-edit', category._id]" [routerLinkActive]="['actived']" (click)="editCategory(category._id)" class="btn" style="background-color: blue;"><i class="fa fa-bars"></i></a>
+
+
+              <a class="btn">
+                <button onclick="document.getElementById('id20').style.display='block'" class="btn" style="background-color: red;"><i class="fa fa-trash"></i></button>
+                <div id="id20" class="w3-modal" style="color: #00A0DF;">
+                    <div class="w3-modal-content w3-animate-top w3-card-4">
+                        <header class="w3-container w3-blue">
+                          <span onclick="document.getElementById('id20').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          <h2>¿Estas seguro de querer eliminar la categoria?</h2>
+                        </header>
+
+                        <div class="w3-container" style="background-color: #00A0DF;">
+                          <p><button class="w3-button w3-block w3-red w3-blue" (click)="deleteCategory(category._id)">eliminar categoria</button></p>
+                        </div>
+                        <footer class="w3-container w3-teal">
+
+                        </footer>
+                    </div>
+                </div>
+              </a>
+
+
+
+
+
       </td>
     </tr>
   </table>
 </div>
+

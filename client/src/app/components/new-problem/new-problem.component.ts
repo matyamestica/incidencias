@@ -49,7 +49,7 @@ export class NewProblemComponent implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
-    this.problem = new Problem('','','','','','','','','','','','');
+    this.problem = new Problem('','',this.identity._id,'','','','','','','','','');
     this.next_page = 1;
     this.prev_page = 1;
    }

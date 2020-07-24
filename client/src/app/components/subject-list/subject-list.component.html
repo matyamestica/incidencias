@@ -28,7 +28,25 @@
       <td>{{subject.teacher}}</td>
       <td class="w3-right-align">
           <a [routerLink]="['/subject-edit', subject._id]" [routerLinkActive]="['actived']" (click)="editSubject(subject._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
-          <a (click)="deleteSubject(subject._id)" class="btn"><i class="fa fa-trash"></i></a>
+
+          <a class="btn">
+            <button onclick="document.getElementById('id22').style.display='block'" class="btn" style="background-color: red;"><i class="fa fa-trash"></i></button>
+            <div id="id22" class="w3-modal" style="color: #00A0DF;">
+                <div class="w3-modal-content w3-animate-top w3-card-4">
+                    <header class="w3-container w3-blue">
+                      <span onclick="document.getElementById('id22').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                      <h2>¿Estas seguro de querer eliminar el ramo?</h2>
+                    </header>
+
+                    <div class="w3-container" style="background-color: #00A0DF;">
+                      <p><button class="w3-button w3-block w3-red w3-blue" (click)="deleteSubject(subject._id)">eliminar ramo</button></p>
+                    </div>
+                    <footer class="w3-container w3-teal">
+
+                    </footer>
+                </div>
+            </div>
+          </a>
       </td>
     </tr>
   </table>

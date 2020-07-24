@@ -8,6 +8,7 @@ var Problem = require('../models/problem');
 var Subcategory = require('../models/subcategory');
 var Subject = require('../models/subject');
 var User = require('../models/user');
+const { checkServerIdentity } = require('tls');
 
 function getProblem(req, res){
     var problemId = req.params.id;
@@ -28,10 +29,14 @@ function getProblem(req, res){
 function saveProblem(req, res){
     var problem = new Problem();
 
+   
     var params = req.body;
+
     console.log(params);
+
     var hourFin = new Date();
     hourFin = moment().add(1, 'hours');
+
     problem.code = params.code;
     problem.user_create = params.user_create;
     problem.description = params.description;
