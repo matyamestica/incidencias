@@ -19,6 +19,17 @@ export class ProblemService{
     this.url = GLOBAL.url;
   }
 
+  getProblem(token, id: string){
+    let headers = new Headers({
+        'Content-Type':'application/json',
+        'Authorization':token
+    });
+
+    let options = new RequestOptions({headers: headers});
+    return this._http.get(this.url+'problem/'+id, options)
+                      .map(res => res.json());
+  }  
+
   getProblems(token, page){
     let headers = new Headers({
       'Content-type':'application/json',

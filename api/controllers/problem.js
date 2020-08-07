@@ -18,7 +18,7 @@ function getProblem(req, res){
             res.status(500).send({message: 'Error en la petición'});
         }else{
             if(!problem){
-                res.status(404).send({message: 'La categoría no existe'});
+                res.status(404).send({message: 'El problema no existe'});
             }else{
                 res.status(200).send({problem});
             }

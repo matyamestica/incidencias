@@ -22,6 +22,7 @@ import { Answer } from 'app/models/answer';
 export class NewAnswerComponent implements OnInit {
   public titulo: string;
   public user: User;
+  public problem: Problem;
   public problems: Problem[];
   public answer: Answer;
   public categories: Category[];
@@ -54,11 +55,38 @@ export class NewAnswerComponent implements OnInit {
    }
 
   ngOnInit() {
+    console.log('new-answer.component.ts cargado');
     this.getCategories();
     this.getSubcategories();
     this.getSubjects();
     this.getProblems();
+    console.log(this.problem);
   }
+
+  getProblem(){
+    this._route.params.forEach((params: Params) => {
+            let id = params['id'];
+
+            this._problemService.getProblem(this.token, id).subscribe(
+                response => {
+                        if(!response.problem){
+                            this._router.navigate(['/']);
+                        }else{
+                            this.problem = response.problem;
+                        }
+                },
+                error => {
+                var errorMessage = <any>error;
+
+                if(errorMessage != null){
+                var body = JSON.parse(error._body);
+                //this.errorMessage = body.message;
+                console.log(error);
+                }
+            }
+            );
+    });
+}
 
   getCategories(){
     this._route.params.forEach((params: Params) => {
@@ -200,8 +228,5 @@ export class NewAnswerComponent implements OnInit {
         }
       )
     });
-  } 
-
-
-
+  }
 }

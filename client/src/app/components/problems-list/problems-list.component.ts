@@ -28,6 +28,7 @@ export class ProblemsListComponent implements OnInit {
       filtro_valor = ''
 
         public titulo: string;
+        public problem: Problem;
         public problems: Problem[];
         public categories: Category[];
         public subcategories: Subcategory[];
@@ -68,6 +69,31 @@ export class ProblemsListComponent implements OnInit {
     this.getSubcategories();
     this.getSubjects();
   }
+
+  getProblem(){
+    this._route.params.forEach((params: Params) => {
+            let id = params['id'];
+
+            this._problemService.getProblem(this.token, id).subscribe(
+                response => {
+                        if(!response.problem){
+                            this._router.navigate(['/']);
+                        }else{
+                            this.problem = response.problem;
+                        }
+                },
+                error => {
+                var errorMessage = <any>error;
+
+                if(errorMessage != null){
+                var body = JSON.parse(error._body);
+                //this.errorMessage = body.message;
+                console.log(error);
+                }
+            }
+            );
+    });
+}
 
 
   getProblems(){
