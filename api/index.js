@@ -5,6 +5,7 @@ var app = require('./app');
 var port = process.env.PORT || 3977;
 
 var nodemailer = require('nodemailer');
+const { db } = require('./models/user');
 app.post('/send-email', (req, res) => {
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -41,5 +42,5 @@ mongoose.connect('mongodb://localhost:27017/incidencias', {useNewUrlParser: true
             console.log("Servidor del api rest escuchando en el puerto http:localhost:"+port);
         });
     }
-
 });
+
