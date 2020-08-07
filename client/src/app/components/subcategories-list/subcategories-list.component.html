@@ -27,7 +27,7 @@
       <td >{{subcategory.category.name}}</td>
       <td class="w3-right-align">
           <a [routerLink]="['/subcategory-edit', subcategory._id]" [routerLinkActive]="['actived']" (click)="editSubcategory(subcategory._id)" class="btn" style="background-color: green;;"><i class="fas fa-edit"></i></a>
-          
+
           <a class="btn">
             <button onclick="document.getElementById('id21').style.display='block'" class="btn" style="background-color: red;"><i class="fa fa-trash"></i></button>
             <div id="id21" class="w3-modal" style="color: #00A0DF;">
