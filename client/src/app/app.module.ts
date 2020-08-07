@@ -20,6 +20,7 @@ import { CategoryEditComponent } from './components/category-edit/category-edit.
 import { SubcategoryEditComponent } from './components/subcategory-edit/subcategory-edit.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 
 
 
@@ -40,7 +41,8 @@ import { SearchPipe } from './pipes/search.pipe';
     CategoryEditComponent,
     SubcategoryEditComponent,
     SearchComponent,
-    SearchPipe
+    SearchPipe,
+    NewAnswerComponent
   ],
   imports: [
     BrowserModule,
