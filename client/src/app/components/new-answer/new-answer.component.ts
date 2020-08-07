@@ -193,7 +193,7 @@ export class NewAnswerComponent implements OnInit {
       )
     });
   }
-  
+
   getProblems(){
     this._route.params.forEach((params: Params) => {
       let page = +params['page'];
