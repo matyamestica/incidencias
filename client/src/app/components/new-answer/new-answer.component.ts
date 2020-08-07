@@ -58,6 +58,7 @@ export class NewAnswerComponent implements OnInit {
     this.getSubcategories();
     this.getSubjects();
     this.getProblems();
+    console.log()
   }
 
   getCategories(){
@@ -165,7 +166,7 @@ export class NewAnswerComponent implements OnInit {
       )
     });
   }
-  
+
   getProblems(){
     this._route.params.forEach((params: Params) => {
       let page = +params['page'];
@@ -200,7 +201,7 @@ export class NewAnswerComponent implements OnInit {
         }
       )
     });
-  } 
+  }
 
 
 
