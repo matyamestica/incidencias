@@ -1,49 +1,106 @@
-<div class="head page" *ngIf="identity">
-  <div class="w3-row-padding">
-    <div class="w3-half">
-      <h1>{{titulo}}</h1>
-      <div class="a">
-        <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']" class="button">Añadir nueva Incidencia</button>
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
+  <div class="head page" *ngIf="identity">
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <h1>{{titulo}}</h1>
+        <div class="a">
+          <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']" class="button">Añadir nueva Incidencia</button>
 
+        </div>
+      </div>
+      <div class="w3-half">
+        <label>Introduce la busqueda (solo por nombre)</label>
+        <app-search (search)="handleSearch($event)"></app-search>
       </div>
     </div>
-    <div class="w3-half">
-      <label>Introduce la busqueda (solo por nombre)</label>
-      <app-search (search)="handleSearch($event)"></app-search>
-    </div>
+  </div>
+
+  <br>
+  <div class="w3-container">
+    <table class="w3-table-all w3-hoverable">
+      <thead>
+        <tr class="w3-light-grey">
+          <th>Nombre alumno</th>
+          <th>Descripción</th>
+          <th>Estado</th>
+          <th>Subcategoria</th>
+          <th>Categoria</th>
+          <th>Ramo</th>
+          <th>Fecha</th>
+          <th class="w3-right-align">Editar / Eliminar</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let problem of problems | search:filtro_valor" class="w3-hover-blue">
+        <td>{{problem.user_create.name}}</td>
+        <td>{{problem.description}}</td>
+        <td>{{problem.state}}</td>
+        <td>{{problem.subcategory.name}}</td>
+        <td>{{problem.category.name}}</td>
+        <td>{{problem.subject.name}}</td>
+        <td>{{problem.date_create}}</td>
+        <td class="w3-right-align">
+            <a [routerLink]="['/new-answer', problem._id]" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;"><i class="fas fa-edit"></i></a>
+            <a (click)="deleteProblem(problem._id)" class="btn"><i class="fa fa-trash"></i></a>
+
+
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 
-<br>
-<div class="w3-container">
-  <table class="w3-table-all w3-hoverable">
-    <thead>
-      <tr class="w3-light-grey">
-        <th>Nombre alumno</th>
-        <th>Descripción</th>
-        <th>Estado</th>
-        <th>Subcategoria</th>
-        <th>Categoria</th>
-        <th>Ramo</th>
-        <th>Fecha</th>
-        <th class="w3-right-align">Editar / Eliminar</th>
-      </tr>
-    </thead>
-    <tr *ngFor="let problem of problems | search:filtro_valor" class="w3-hover-blue">
-      <td>{{problem.user_create.name}}</td>
-      <td>{{problem.description}}</td>
-      <td>{{problem.state}}</td>
-      <td>{{problem.subcategory.name}}</td>
-      <td>{{problem.category.name}}</td>
-      <td>{{problem.subject.name}}</td>
-      <td>{{problem.date_create}}</td>
-      <td class="w3-right-align">
-          <a [routerLink]="['/new-answer']" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;"><i class="fas fa-edit"></i></a>
-          <a (click)="deleteProblem(problem._id)" class="btn"><i class="fa fa-trash"></i></a>
+<div *ngIf="identity.role == 'ROLE_USER'">
+  <div class="head page" *ngIf="identity">
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <h1>{{titulo}}</h1>
+        <div class="a">
+          <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']" class="button">Añadir nueva Incidencia</button>
+
+        </div>
+      </div>
+      <div class="w3-half">
+        <label>Introduce la busqueda (solo por nombre)</label>
+        <app-search (search)="handleSearch($event)"></app-search>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+      <div class="w3-container">
+        <ng-container *ngIf="identity._id == 'problem._id'">
+          <table class="w3-table-all w3-hoverable">
+            <thead>
+              <tr class="w3-light-grey">
+                <th>Nombre alumno</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Subcategoria</th>
+                <th>Categoria</th>
+                <th>Ramo</th>
+                <th>Fecha</th>
+                <th class="w3-right-align">Editar / Eliminar</th>
+              </tr>
+            </thead>
+
+              <tr *ngFor="let problem of problems | search:filtro_valor" class="w3-hover-blue">
+                <td>{{problem.user_create.name}}</td>
+                <td>{{problem.description}}</td>
+                <td>{{problem.state}}</td>
+                <td>{{problem.subcategory.name}}</td>
+                <td>{{problem.category.name}}</td>
+                <td>{{problem.subject.name}}</td>
+                <td>{{problem.date_create}}</td>
+                <td class="w3-right-align">
+                    <a [routerLink]="['/new-answer', problem._id]" [routerLinkActive]="['actived']" (click)="getProblem(problem._id);" class="btn" style="background-color: green;"><i class="fas fa-edit"></i></a>
+                    <a (click)="deleteProblem(problem._id)" class="btn"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
 
 
-      </td>
-    </tr>
-  </table>
+          </table>
+        </ng-container>
+      </div>
+
 </div>
-

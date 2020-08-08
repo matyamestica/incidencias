@@ -1,5 +1,5 @@
-
-<div>
+<!--ADMIN-->
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
     <div class="row">
         <div class="column">
             <div class="card" *ngIf="identity.role == 'ROLE_ADMIN'">
@@ -88,4 +88,57 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<!--Usuario-->
+<div *ngIf="identity.role == 'ROLE_USER'">
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+          <div class="card">
+              <button [routerLink]="['/problems-list']" [routerLinkActive]="['actived']" class="button" style="background-color: blue;">Listado de Incidencias</button>
+              <p></p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+      </div>
+      <div class="column">
+          <div class="card">
+              <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']"  class="button">Nueva Incidencia</button>
+              <p> </p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+      </div>
+      <div class="column">
+
+      </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+  </div>
 </div>
