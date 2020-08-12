@@ -21,6 +21,8 @@ import { SubcategoryEditComponent } from './components/subcategory-edit/subcateg
 import { SearchComponent } from './components/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -42,7 +44,9 @@ import { NewAnswerComponent } from './components/new-answer/new-answer.component
     SubcategoryEditComponent,
     SearchComponent,
     SearchPipe,
-    NewAnswerComponent
+    NewAnswerComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

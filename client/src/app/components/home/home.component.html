@@ -1,9 +1,9 @@
 <!--ADMIN-->
-<div *ngIf="identity.role == 'ROLE_ADMIN'">
+<div *ngIf="identity.email == 'admin@admin.com'">
     <div class="row">
         <div class="column">
-            <div class="card" *ngIf="identity.role == 'ROLE_ADMIN'">
-                <button [routerLink]="['/new-category']" [routerLinkActive]="['actived']" class="button">Añadir nueva categoria</button>
+            <div class="card">
+                <button [routerLink]="['/new-category']" [routerLinkActive]="['actived']" class="button"> categoria</button>
                 <p></p>
                 <p>Opcion para añadir categoria</p>
                 <p>Some text</p>

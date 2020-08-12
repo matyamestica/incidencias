@@ -1,6 +1,10 @@
+
 import { HomeComponent } from './components/home/home.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+//import login
+import { LoginComponent } from './components/login/login.component';
 
 //import user
 
