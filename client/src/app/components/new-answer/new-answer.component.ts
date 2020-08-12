@@ -60,7 +60,6 @@ export class NewAnswerComponent implements OnInit {
     this.getSubcategories();
     this.getSubjects();
     this.getProblems();
-    console.log(this.problem);
   }
 
   getProblem(){

@@ -13,7 +13,7 @@ const { checkServerIdentity } = require('tls');
 function getProblem(req, res){
     var problemId = req.params.id;
 
-    Problem.findById(problemId, (err, problem) => {
+    Problem.findById(problemId).populate({path: 'user_create'}).populate({path: 'category'}).populate({path: 'subcategory'}).populate({path: 'subject'}).exec((err, problem) => {
         if(err){
             res.status(500).send({message: 'Error en la petición'});
         }else{
