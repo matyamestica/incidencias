@@ -77,7 +77,7 @@ var transporter = nodemailer.createTransport({
         from: 'incidencias.ucatolicadelmaule@gmail.com',
         to: 'maty6289@live.cl,marco.cgonzalez19@gmail.com',
         subject: 'Enviado desde nodemailer',
-        text: 'Funciona el envío de correos'
+        text: 'Se ha registrado una nueva respuesta a su incidencia,visite el portal para más información.'
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
