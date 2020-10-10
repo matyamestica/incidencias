@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <button onclick="document.getElementById('id102').style.display='block'" style="width:auto;">Registrate</button>
+
+    <div id="id102" class="modal">
+      <span onclick="document.getElementById('id102').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" action="/action_page.php" #registerForm="ngForm" (ngSubmit)="onSubmitRegister()">
+        <div *ngIf="alertRegister" class="alert alert-success" >
+          <strong>Registrado</strong><a href="#" class="alert-link">{{alertRegister}}</a>.
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          <strong>Error!</strong><a href="#" class="alert-link">read this message</a>.
+        </div>
+        <div class="container">
+          <h1>Registrate</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="name"><b>Nombre</b></label>
+          <input type="text" placeholder="Introduce tu Nombre" #name="ngModel" name="name" [(ngModel)]="user_register.name" class="form-control" required>
+
+          <label for="surname"><b>Apellido</b></label>
+          <input type="text" placeholder="Introduce tu Apellido" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" class="form-control" required>
+
+          <label for="rut"><b>RUT</b></label>
+          <input type="text" placeholder="Introduce tu RUT" #rut="ngModel" name="rut" [(ngModel)]="user_register.rut" class="form-control" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Introduce tu Email" #email="ngModel" name="email" [(ngModel)]="user_register.email" class="form-control" required>
+
+          <label for="password"><b>Contraseña</b></label>
+          <input type="password" placeholder="Enter Password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control" required>
+
+
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id102').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id102');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+</body>
+</html>

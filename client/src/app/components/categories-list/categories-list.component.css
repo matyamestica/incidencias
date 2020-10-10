@@ -1,0 +1,32 @@
+/*animacion boton*/
+.btn {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 12 px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.btn:hover {opacity: 1}
+
+/*alineaciones div*/
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+}
+
+div.d {
+  text-align: justify;
+}
+
+

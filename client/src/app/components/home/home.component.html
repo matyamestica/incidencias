@@ -1,0 +1,144 @@
+<!--ADMIN-->
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/new-category']" [routerLinkActive]="['actived']" class="button"> categoria</button>
+                <p></p>
+                <p>Opcion para añadir categoria</p>
+                <p>Some text</p>
+            </div>
+        </div>
+        <div class="column">
+          <div class="card">
+              <button [routerLink]="['/new-subcategory']" [routerLinkActive]="['actived']"  class="button">Nueva Subcategoria</button>
+              <p> </p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card" >
+              <button [routerLink]="['/new-subject']" [routerLinkActive]="['actived']" class="button">Añadir nuevo ramo</button>
+              <p></p>
+              <p>Opcion para añadir categoria</p>
+              <p>Some text</p>
+          </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']"  class="button">Nueva Incidencia</button>
+                <p> </p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/categories-list']" [routerLinkActive]="['actived']" id="identity_name" class="button" style="background-color: blue;">Listado de Categorías</button>
+                <p></p>
+                <p>Boton para ver el listado de categorias</p>
+                <p> oli </p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/subcategories-list']" [routerLinkActive]="['actived']" id="identity_name" class="button" style="background-color: blue;">Listado de Subcategorías</button>
+                <p></p>
+                <p>Boton para ver el listado de subcategorias</p>
+                <p> oli </p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/subject-list']" [routerLinkActive]="['actived']" class="button" style="background-color: blue;">Listado de Ramos</button>
+                <p> </p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+        <div class="column">
+          <div class="card">
+              <button [routerLink]="['/problems-list']" [routerLinkActive]="['actived']" class="button" style="background-color: blue;">Listado de Incidencias</button>
+              <p></p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+              <button [routerLink]="['/new-answer']" [routerLinkActive]="['actived']"  class="button">Nueva Respuesta</button>
+                <p></p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <button [routerLink]="['/subject-edit']" [routerLinkActive]="['actived']"  class="button">Listado de Ramos</button>
+                <p> </p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Usuario-->
+<div *ngIf="identity.role == 'ROLE_USER'">
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+          <div class="card">
+              <button [routerLink]="['/problems-list']" [routerLinkActive]="['actived']" class="button" style="background-color: blue;">Listado de Incidencias</button>
+              <p></p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+      </div>
+      <div class="column">
+          <div class="card">
+              <button [routerLink]="['/new-problem']" [routerLinkActive]="['actived']"  class="button">Nueva Incidencia</button>
+              <p> </p>
+              <p>Some text</p>
+              <p>Some text</p>
+          </div>
+      </div>
+      <div class="column">
+
+      </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="column">
+
+      </div>
+      <div class="column">
+
+      </div>
+  </div>
+</div>

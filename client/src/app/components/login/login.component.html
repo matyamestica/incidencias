@@ -1,0 +1,51 @@
+<!--deslogueado-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <button onclick="document.getElementById('id101').style.display='block'" style="width:auto;">Iniciar Sesion</button>
+
+  <div id="id101" class="modal">
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" action="/action_page.php" method="post" class="modal-content animate">
+      <div class="imgcontainer" style="float:right">
+        <span onclick="document.getElementById('id101').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="https://ingsolar.cl/wp-content/uploads/2020/02/img_avatar-png.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Email</b></label>
+        <input type="text" placeholder="Introduzca su correo" #email="ngModel" name="email" [(ngModel)]="user.email" class="form-control" required>
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input placeholder="Enter Password" type="password" #password="ngModel" name="password" [(ngModel)]="user.password" class="form-control" required>
+
+        <button type="submit"><a href="**" style="color: #f1f1f1;">Login </a></button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id101').style.display='none'" class="cancelbtn">Cancel</button>
+
+      </div>
+    </form>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id101');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+</body>
+</html>

@@ -7,8 +7,11 @@ var ProblemSchema = Schema({
     code: String,
     user_create: { type: Schema.ObjectId, ref: 'User' },
     description: String,
-    user_secretary: String,
-    user_director: String,
+    users: [{ 
+        user: {type: Schema.ObjectId, ref: 'User'},
+        role: String,
+        added_date: String
+    }],
     subject: { type: Schema.ObjectId, ref: 'Subject' },
     file: String,
     category: { type: Schema.ObjectId, ref: 'Category' },
