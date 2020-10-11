@@ -8,7 +8,8 @@ var AnswerSchema = Schema({
     user: {type: Schema.ObjectId, ref:'User'},
     message: String,
     date: String,
-    file: String
+    file: String,
+    type: Number
 });
 
 module.exports = mongoose.model('Answer', AnswerSchema);

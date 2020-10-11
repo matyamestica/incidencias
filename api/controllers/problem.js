@@ -10,6 +10,7 @@ var Subject = require('../models/subject');
 var User = require('../models/user');
 const { checkServerIdentity } = require('tls');
 
+
 function getProblem(req, res){
     var problemId = req.params.id;
 
@@ -29,7 +30,6 @@ function getProblem(req, res){
 function saveProblem(req, res){
     var problem = new Problem();
 
-   
     var params = req.body;
 
     console.log(params);
@@ -40,8 +40,7 @@ function saveProblem(req, res){
     problem.code = params.code;
     problem.user_create = params.user_create;
     problem.description = params.description;
-    problem.user_secretary = 'null';//MODIFICAR PARA OBTENER ID SECRETARIA
-    problem.user_director = 'null';//MODIFICAR PARA OBTENER ID DIRECTOR
+    problem.users = params.users;
     problem.file = 'null'; //MODIFICAR PARA PODER SUBIR ARCHIVO
     problem.subject = params.subject;
     problem.category = params.category;
@@ -89,9 +88,26 @@ function getProblems(req, res){
 
 }
 
+function updateProblem(req, res){
+    var problemId = req.params.id;
+    var update = req.body;
+
+    Problem.findByIdAndUpdate(problemId, update, (err, problemUpdated) => {
+        if(err){
+            res.status(500).send({message: 'Error al guardar el Problema'});
+        }else{
+            if(!problemUpdated){
+                res.status(500).send({message: 'Error al actualizar el Problema'});
+            }else{
+                res.status(200).send({problem: problemUpdated});
+            }
+        }
+    });
+}
 
 module.exports = {
     getProblem,
     getProblems,
-    saveProblem
+    saveProblem,
+    updateProblem,
 }
