@@ -54,6 +54,8 @@ function loginUser(req, res){
 
     var rut = params.rut;
     var password = params.password;
+    console.log(email);
+    console.log(password);
 
     User.findOne({rut: rut.toLowerCase()}, (err, user) => {
         if(err){

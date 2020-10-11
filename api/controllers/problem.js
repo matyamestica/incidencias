@@ -40,7 +40,11 @@ function saveProblem(req, res){
     problem.code = params.code;
     problem.user_create = params.user_create;
     problem.description = params.description;
+<<<<<<< HEAD
     problem.users = [params.users];
+=======
+    problem.users = params.users;
+>>>>>>> 875941b9ca8efa695956b98b5fb3117bc3d4af64
     problem.file = 'null'; //MODIFICAR PARA PODER SUBIR ARCHIVO
     problem.subject = params.subject;
     problem.category = params.category;
@@ -104,6 +108,7 @@ function updateProblem(req, res){
     });
 }
 
+<<<<<<< HEAD
 function newUserProblem(req, res){
     var problemId = req.params.id;
     var newUser = req.params.body;
@@ -123,6 +128,23 @@ function newUserProblem(req, res){
         }
     });
 
+=======
+function updateProblem(req, res){
+    var problemId = req.params.id;
+    var update = req.body;
+
+    Problem.findByIdAndUpdate(problemId, update, (err, problemUpdated) => {
+        if(err){
+            res.status(500).send({message: 'Error al guardar el Problema'});
+        }else{
+            if(!problemUpdated){
+                res.status(500).send({message: 'Error al actualizar el Problema'});
+            }else{
+                res.status(200).send({problem: problemUpdated});
+            }
+        }
+    });
+>>>>>>> 875941b9ca8efa695956b98b5fb3117bc3d4af64
 }
 
 module.exports = {
@@ -130,5 +152,8 @@ module.exports = {
     getProblems,
     saveProblem,
     updateProblem,
+<<<<<<< HEAD
     newUserProblem
+=======
+>>>>>>> 875941b9ca8efa695956b98b5fb3117bc3d4af64
 }

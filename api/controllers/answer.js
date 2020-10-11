@@ -11,6 +11,7 @@ var Subject = require('../models/subject');
 var User = require('../models/user');
 const answer = require('../models/answer');
 var nodemailer = require('nodemailer');
+const user = require('../models/user');
 
 function getAnswers(req, res){
     if(req.params.page){
@@ -46,8 +47,23 @@ function saveAnswer(req, res){
     answer.message = params.message;
     answer.date = params.date;
     answer.file = params.file;
+    answer.type = params.type;
 
     answer.save((err, answerStored) => {
+
+         Problem.findByIdAndUpdate(
+              params.problem,
+              { $push: { users: params.user } },
+              function(err, response){
+                  if(err){
+                      return err;
+                  }
+                  else{
+                    return response;
+                  }
+              }  
+            );
+
         if(err){
             res.status(500).send({message: 'Error al guardar la respuesta'});
         }else{
@@ -55,7 +71,7 @@ function saveAnswer(req, res){
                 res.status(404).send({message: 'La respuesta no ha sido guardado'});
             }else{
                 res.status(200).send({answer: answerStored});
-                sendEmail();
+                //sendEmail();
             }
         }
     });
