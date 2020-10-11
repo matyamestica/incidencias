@@ -88,20 +88,20 @@ function updateCategory(req, res){
         }
     });
 }    
-    function deleteCategory(req, res){
-        var categoryId = req.params.id;
-    
-        Category.findByIdAndRemove(categoryId, (err, categoryRemoved) => {
-            if(err){
-                res.status(500).send({message: 'Error al eliminar Categoría'});
+function deleteCategory(req, res){
+    var categoryId = req.params.id;
+
+    Category.findByIdAndRemove(categoryId, (err, categoryRemoved) => {
+        if(err){
+            res.status(500).send({message: 'Error al eliminar Categoría'});
+        }else{
+            if(!categoryRemoved){
+                res.status(404).send({message: 'Categoría no ha sido eliminada'});
             }else{
-                if(!categoryRemoved){
-                    res.status(404).send({message: 'Categoría no ha sido eliminada'});
-                }else{
-                    res.status(200).send({categoryRemoved});
-                }
+                res.status(200).send({categoryRemoved});
             }
-        });    
+        }
+    });    
 
   }
 
